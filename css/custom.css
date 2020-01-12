@@ -1,4 +1,3 @@
-
 figure.right-aligned > img {
   float: right;
   width: 50%;
@@ -8,8 +7,8 @@ figure.right-aligned > img {
 
 figure.centered {
   text-align: center
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 230px;
+  max-width: 280px;
 }
 
 @media only screen and (max-width: 768px) {

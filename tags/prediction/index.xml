@@ -21,16 +21,6 @@
     </item>
     
     <item>
-      <title>Classification Model to Predict Loan Default</title>
-      <link>https://niallmartin.github.io/posts/classification-model-to-predict-loan-default/</link>
-      <pubDate>Fri, 19 Aug 2016 00:00:00 +0100</pubDate>
-      
-      <guid>https://niallmartin.github.io/posts/classification-model-to-predict-loan-default/</guid>
-      <description>As part of my Insight project, I choose to help Zidisha improve their default detection system. But wait, who is Zidisha?
-Zidisha&amp;hellip; Zidisha is a non-profit startup that allows entrepreneurs in developing countries to request credit. Using a crowdsourcing financial model, individuals like Bineta are able to raise the necessary funds to grow their business. This approach allows entrepreneurs to develop sustainable businesses, and provides jobs for additional members in the community.</description>
-    </item>
-    
-    <item>
       <title>Building Classification Models</title>
       <link>https://niallmartin.github.io/posts/building-classification-models/</link>
       <pubDate>Thu, 11 Aug 2016 00:00:00 +0100</pubDate>
