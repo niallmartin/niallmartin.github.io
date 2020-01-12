@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 24 May 2019 10:58:32 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://niallmartin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Stock Market: Analysing and Predicting Trends</title>
+      <link>https://niallmartin.github.io/posts/stock-market-analysing-and-predicting-trends/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://niallmartin.github.io/posts/stock-market-analysing-and-predicting-trends/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Recommended Reading for Data Scientists</title>

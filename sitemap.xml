@@ -3,23 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://niallmartin.github.io/about/</loc>
-    <lastmod>2019-11-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://niallmartin.github.io/</loc>
-    <lastmod>2019-11-03T00:00:00+00:00</lastmod>
+    <loc>https://niallmartin.github.io/categories/analysis/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://niallmartin.github.io/categories/</loc>
-    <lastmod>2019-05-24T10:58:32+00:00</lastmod>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.github.io/tags/code/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.github.io/tags/machine-learning/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.github.io/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://niallmartin.github.io/posts/</loc>
-    <lastmod>2019-05-24T10:58:32+00:00</lastmod>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.github.io/tags/prediction/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.github.io/posts/stock-market-analysing-and-predicting-trends/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.github.io/tags/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.github.io/about/</loc>
+    <lastmod>2019-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -63,27 +93,7 @@
   </url>
   
   <url>
-    <loc>https://niallmartin.github.io/tags/code/</loc>
-    <lastmod>2016-08-19T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://niallmartin.github.io/categories/coding/</loc>
-    <lastmod>2016-08-19T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://niallmartin.github.io/tags/machine-learning/</loc>
-    <lastmod>2016-08-19T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://niallmartin.github.io/tags/prediction/</loc>
-    <lastmod>2016-08-19T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://niallmartin.github.io/tags/</loc>
     <lastmod>2016-08-19T00:00:00+01:00</lastmod>
   </url>
   
