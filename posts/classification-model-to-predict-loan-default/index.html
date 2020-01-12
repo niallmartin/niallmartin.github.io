@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="indicium artificium">
+    <meta name="description" content="Niall Martin&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal,data science,machine learning,ML,AI">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Classification Model to Predict Loan Default"/>
+<meta name="twitter:description" content="Introduction to my Insight Data Science project."/>
+
+    <meta property="og:title" content="Classification Model to Predict Loan Default" />
+<meta property="og:description" content="Introduction to my Insight Data Science project." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://niallmartin.github.io/posts/classification-model-to-predict-loan-default/" />
+<meta property="article:published_time" content="2016-08-19T00:00:00+01:00" />
+<meta property="article:modified_time" content="2016-08-19T00:00:00+01:00" />
+
+
+    
+      <base href="https://niallmartin.github.io/posts/classification-model-to-predict-loan-default/">
+    
+    <title>
+  Classification Model to Predict Loan Default · Niall Martin
+</title>
+
+    
+      <link rel="canonical" href="https://niallmartin.github.io/posts/classification-model-to-predict-loan-default/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://niallmartin.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://niallmartin.github.io/images/logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://niallmartin.github.io/images/logo.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.62.2" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://niallmartin.github.io/">
+      Niall Martin
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://niallmartin.github.io/about/">ABOUT</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://niallmartin.github.io/posts/">BLOG</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://vectordatascience.com">CONSULTING</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://niallmartin.github.io/quotes/">QUOTES</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Classification Model to Predict Loan Default</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2016-08-19T00:00:00&#43;01:00'>
+                August 19, 2016
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              4 minutes read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://niallmartin.github.io/categories/coding/">Coding</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://niallmartin.github.io/tags/code/">Code</a>
+      <span class="separator">•</span>
+    <a href="https://niallmartin.github.io/tags/prediction/">Prediction</a>
+      <span class="separator">•</span>
+    <a href="https://niallmartin.github.io/tags/machine-learning/">Machine Learning</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        <figure class="centered">
+    <img src="https://niallmartin.github.io/images/insight_project/introduction.jpg"
+         alt="Zadisha"/> 
+</figure>
+
+<p>As part of my Insight project, I choose to help Zidisha improve their default detection system. But wait, who is Zidisha?</p>
+<h1 id="zidisha">Zidisha&hellip;</h1>
+<p>Zidisha is a non-profit startup that allows entrepreneurs in developing countries to request credit. Using a crowdsourcing financial model, individuals like Bineta are able to raise the necessary funds to grow their business. This approach allows entrepreneurs to develop sustainable businesses, and provides jobs for additional members in the community.</p>
+<h4 id="binetas-story">Bineta's Story</h4>
+<figure class="right-aligned">
+    <img src="https://niallmartin.github.io/images/insight_project/bineta.png"
+         alt="bineta"/> 
+</figure>
+
+<p>Bineta is a seamstress in Senegal, West Africa whose dresses are in high demand. Right now, she can only produce one or two dresses per week and desperately requires a loan to increase production. With the aim of employing one person from the local area, Bineta has applied to Zidisha for a crowdsourced loan.</p>
+<h1 id="my-insight-project">My Insight project</h1>
+<p>Zidisha aims to support entrepreneurs from disadvantaged backgrounds to ensure sustainable development in African communities. This goal, however, is directly undermined by fraud and credit risk as defaulting loans reduce the organisations ability to offer credit for additional loans. To address this issue, I used my time at Insight to:</p>
+<ol>
+<li><strong>Determine factors that influence loan default.</strong></li>
+<li><strong>Develop a system to better predict borrowers defaulting.</strong></li>
+</ol>
+<p>Likewise, I split the project into three steps, where I:</p>
+<ol>
+<li>Stored and cleaned data in MySQL.</li>
+<li>Identified variables that influence loan default.</li>
+<li>Developed a risk model using Python and Scikit-Learn.</li>
+</ol>
+<h1 id="developing-the-model">Developing The Model </h1>
+<p>I broke the problem into a pipeline with several stages, going from data storage to classification.</p>
+<p><strong>Data Storage &amp; Cleaning:</strong> Features from over 30,000 records were combined from multiple tables in MySQL, with records cleaned (e.g. imputing and one-hot encoding) and plotted to identify trends. For example, the average defaulting person was shown to have 100 fewer Facebook friends compared to borrowers who paid in full, indicating that a wider social network maximises the likelihood of success!</p>
+<figure class="centered">
+    <img src="https://niallmartin.github.io/images/insight_project/data_pipeline.png"
+         alt="Pipeline"/> 
+</figure>
+
+<p><strong>Test and Training Sets:</strong> I then split the data into two groups so that 80% was available for model training and 20% for testing.</p>
+<p><strong>Model Selection:</strong> Selection of an appropriate machine learning algorithm is crucial to ensure meaningful results. The application of logistic regression, for example, required that successful loans be under sampled. The algorithm would simply predict that all loans will eventually pay, if I liked at all data - A 90% rate of accuracy isn’t that bad, after all!</p>
+<p>Neural networks and ensemble decision trees were also tested using the scikit-learn machine learning library, but a gradient boosted model was shown to give best results. Such algorithms are amongst the most popular in the industry due to their relatively good accuracy and robustness, but overfitting can be an issue.</p>
+<p><strong>Parameter Tuning:</strong>  The model was initialized from historical data, after which the hyper parameters were optimised using grid search. From there, it was a simple matter of predicting each borrower's likelihood of default on the test dataset.</p>
+<p><strong>Feature Extraction:</strong> During the latter stages of model development, I identified features that best predict loan default. Random forest provides a natural way to assess the importance of independent condtions, and the anonymized results from this process are shown in the following graph. These results are, however, subject to a number of limitations, but I'll leave it up to the reader do some extra reading on that!</p>
+<figure class="centered">
+    <img src="https://niallmartin.github.io/images/insight_project/feature_importance.png"
+         alt="Feature Importance"/> 
+</figure>
+
+<h1 id="model-validation-and-results">Model Validation and Results</h1>
+<p>Each model is only as good as the accuracy of its predictions. With that in mind, I tested the results on a separate dataset never before seen by the model, quantifying the accuracy with 10-fold cross validation. The R2 score of 74% showed that the Gradient Boosted Model does a great job classifying defaults, and this really give me confidence in the results.</p>
+<figure class="centered">
+    <img src="https://niallmartin.github.io/images/insight_project/roc_curve.png"
+         alt="ROC Curve"/> 
+</figure>
+
+<p>Receiver operator characteristic (ROC) graphs were also used to identify the tradeoff between the number of false positives (i.e. borrowers predicted to default, but don’t) and true positives (i.e. borrowers predicted to default, and do). I was able to increase the area under the curve (AUC) from  82% to 84% with the inclusion of a secret variable, which I won't disclose to ensure Zidisha's privacy. Needless to say, the results were awesome and Zidisha is very happy with the outcome of the project!</p>
+<h1 id="results">Results</h1>
+<p>In all, I was able to increase the accuracy of Zidisha's model by 8.8% with the inclusion of an additional variable! <strong>This secret parameter has huge ramifications for Zidisha itself, as it's equivalent to a $31,000 reduction in annual losses</strong>. The result ultimately show that a careful statistical analysis of the data is often required to ensure a detailed underlying knowledge of the data is achieved. Only then are we able to leverage truly leverage the power of machine learning, which is only as good as the data at hand.</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "niallmartin" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Data science and machine learning blog</p>
+    
+    
+      
+        © 2020
+      
+       indicium artificium 
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-48181177-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coding on Niall Martin</title>
+    <link>https://niallmartin.github.io/categories/coding/</link>
+    <description>Recent content in Coding on Niall Martin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Aug 2016 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://niallmartin.github.io/categories/coding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Classification Model to Predict Loan Default</title>
+      <link>https://niallmartin.github.io/posts/classification-model-to-predict-loan-default/</link>
+      <pubDate>Fri, 19 Aug 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://niallmartin.github.io/posts/classification-model-to-predict-loan-default/</guid>
+      <description>As part of my Insight project, I choose to help Zidisha improve their default detection system. But wait, who is Zidisha?
+Zidisha&amp;hellip; Zidisha is a non-profit startup that allows entrepreneurs in developing countries to request credit. Using a crowdsourcing financial model, individuals like Bineta are able to raise the necessary funds to grow their business. This approach allows entrepreneurs to develop sustainable businesses, and provides jobs for additional members in the community.</description>
+    </item>
+    
+    <item>
+      <title>Building Classification Models</title>
+      <link>https://niallmartin.github.io/posts/building-classification-models/</link>
+      <pubDate>Thu, 11 Aug 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://niallmartin.github.io/posts/building-classification-models/</guid>
+      <description>Building Building on information presented in my previous post, this articles describes how bagging and boosted can be used to build a classification model. The data is available from Kaggle, and represents the financial transactions from two hundred thousand individuals (each with 800 features).
+Using this dataset, I set about building a loan-default model. The overall pipeline for this project was split into a few stages, all of which are described below.</description>
+    </item>
+    
+  </channel>
+</rss>

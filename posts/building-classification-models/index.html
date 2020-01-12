@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="indicium artificium">
+    <meta name="description" content="Niall Martin&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal,data science,machine learning,ML,AI">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Building Classification Models"/>
+<meta name="twitter:description" content="Introduction to coding a first classification model."/>
+
+    <meta property="og:title" content="Building Classification Models" />
+<meta property="og:description" content="Introduction to coding a first classification model." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://niallmartin.github.io/posts/building-classification-models/" />
+<meta property="article:published_time" content="2016-08-11T00:00:00+01:00" />
+<meta property="article:modified_time" content="2016-08-11T00:00:00+01:00" />
+
+
+    
+      <base href="https://niallmartin.github.io/posts/building-classification-models/">
+    
+    <title>
+  Building Classification Models · Niall Martin
+</title>
+
+    
+      <link rel="canonical" href="https://niallmartin.github.io/posts/building-classification-models/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://niallmartin.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://niallmartin.github.io/images/logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://niallmartin.github.io/images/logo.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.62.2" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://niallmartin.github.io/">
+      Niall Martin
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://niallmartin.github.io/about/">ABOUT</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://niallmartin.github.io/posts/">BLOG</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://vectordatascience.com">CONSULTING</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://niallmartin.github.io/quotes/">QUOTES</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Building Classification Models</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2016-08-11T00:00:00&#43;01:00'>
+                August 11, 2016
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              7 minutes read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://niallmartin.github.io/categories/coding/">Coding</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://niallmartin.github.io/tags/code/">Code</a>
+      <span class="separator">•</span>
+    <a href="https://niallmartin.github.io/tags/prediction/">Prediction</a>
+      <span class="separator">•</span>
+    <a href="https://niallmartin.github.io/tags/machine-learning/">Machine Learning</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        <h1 id="building">Building</h1>
+<p>Building on information presented in my previous post, this articles describes how bagging and boosted can be used to build a classification model. The data is available from Kaggle, and represents the financial transactions from two hundred thousand individuals (each with 800 features).</p>
+<p>Using this dataset, I set about building a loan-default model. The overall pipeline for this project was split into a few stages, all of which are described below.</p>
+<ol>
+<li>Environment Setup
+<ul>
+<li>MySQL.</li>
+<li>Numpy</li>
+<li>Pandas.</li>
+<li>Scikit-Learn.</li>
+</ul>
+</li>
+<li>Reading MySQL data.</li>
+<li>Preprocessing
+<ul>
+<li>Dealing with missing values.</li>
+<li>Dealing with categorical variables.</li>
+</ul>
+</li>
+<li>Model Training
+<ul>
+<li>Gradient Boosting.</li>
+</ul>
+</li>
+<li>Model Testing.</li>
+</ol>
+<h1 id="environment-setup">Environment Setup</h1>
+<p>Python packages were first loaded to ensure the data can be accessed and manipulated. Pandas is perfect for this task as it helps data scientists organise and manipulate information. Other packages were also loaded for later data analysis, included:</p>
+<ul>
+<li>matplotlib - used for plotting.</li>
+<li>seaboard  - used for graph formatting.</li>
+<li>scipy - used for statistical analysis.</li>
+<li>pymysql - used for import data from MySQL.</li>
+<li>sklearn - used for model training and testing.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">%matplotlib inline
+
+%config InlineBackend.figure_format=&#39;retina&#39;
+from __future__ import division
+from itertools import combinations
+import string
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import scipy as sp
+import pymysql
+import seaborn as sns
+sns.set()
+plt.rcParams[&#39;figure.figsize&#39;] = (12, 8)
+sns.set_style(&#34;darkgrid&#34;)
+sns.set_context(&#34;poster&#34;, font_scale=1.3)
+</code></pre></div><h1 id="reading-data">Reading data</h1>
+<p>Having set up the python environment, I set out to read data from MySQL using  pymysql and the following code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">con = pymysql.connect(host=&#39;127.0.0.1&#39;,port=3306, user=&#39;root&#39;, passwd=&#39;xxxx&#39;, db=&#39;DB_Name&#39;)
+cur = con.cursor()
+Borrowers_DataFrame = pd.read_sql(&#34;SELECT * FROM BORROWERS_All&#34;, con=con)
+print(&#39; Data Frame successfully imported.&#39;)
+con.close()
+</code></pre></div><p>Great news, we can now access the data in Python. Lets start modelling!</p>
+<h1 id="preprocessing-data">Preprocessing Data</h1>
+<p>But wait&hellip;The quality of information is key to determine how well a machine learning algorithm will perform. It where therefore vital to examine data before it's used in a machine learning algorithm, all of which is discussed in this section.</p>
+<h4 id="dealing-with-missing-values---imputing-data">Dealing with Missing Values - Imputing Data</h4>
+<p>The removal of missing samples is not feasible in many examples because we might lose too many observations. In this case it is best to use mean imputation to estimate the missing values from the remaining data. This simply implies that NaN values are replaced by the average value for each feature, and scikit-learn's Imputer class allowed me to complete this task.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">from sklearn.preprocessing import Imputer
+imr = Imputer(missing_values=&#39;NaN&#39;, strategy=&#39;mean&#39;, axis=0)
+imr = imr.fit(Borrowers_DataFrame) imputed_data = imr.transform(Borrowers_DataFrame.values)
+</code></pre></div><h4 id="dealing-with-categorical-variables---one-hot-encoding">Dealing with Categorical Variables - One Hot Encoding</h4>
+<p>Nominal and ordinal categorical variables are common features in real-world datasets. Simply put, ordinal refers to categorical variables that can be sorted (e.g. t-shirt size), whilst nominal features cannot be differentiated by size (e.g. dog breed). Only nominal features were included in the Kaggle dataset, so I simply needed to map each string to an integer value.</p>
+<p>A common technique for this task is one-hot encoding. This approach creates a new dummy feature for each unique value, where I split a feature of three countries into separate columns: (e.g. Ireland, USA, and UK). Binary values can then be used to indicate the particular country of a sample, where, for example, an Irish sample can be encoded as Irish=1, USA=0, UK=0.</p>
+<p>To perform this transformation, I used the OneHotEncoder from the scikit-learn.preprocessing module, which is implemented using the get_dummies command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">from sklearn.preprocessing import OneHotEncoder
+OHE_Imputed_DF_Sampled = pd.get_dummies(imputed_data)
+</code></pre></div><h1 id="gradient-boosting-model">Gradient Boosting Model</h1>
+<h4 id="step-1-quick-fit">Step 1: Quick Fit</h4>
+<p>A Gradient Boosted Model (GBM) was used to develop the initial classification model. GBMs are often prone to overfitting in the absence of parameter tuning, so particular attention was paid to the optimization of hyperparameters. Before I focused on the stage of model tuning, I first implemented a simple GBM ensemble using the following code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">from sklearn.ensemble import GradientBoostingClassifier
+estimator = ensemble.GradientBoostingRegressor(n_estimators=200, max_depth=3)
+estimator.fit(X_train, Y_train)
+result = estimator.predict(X_test)
+result = np.expm1(result)
+</code></pre></div><h4 id="step-2-test-training-split">Step 2: Test-Training Split</h4>
+<p>The next step focuses on segmentation of the complete dataset into a separate training and test set (80% for training, and 20% for testing) using the following code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">from sklearn.utils import shuffle
+from sklearn.cross_validation import train_test_split
+X, y = OHE_Imputed_DF_Sampled.iloc[:, 1:], OHE_Imputed_DF_Sampled.iloc[:,0]
+X, y = shuffle(X, y, random_state=1)
+# We do this to shuffle the data that is used each time.
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+</code></pre></div><h4 id="step-3-parameter-tuning">Step 3: Parameter Tuning</h4>
+<p>Finally, I focused on tuning the GBM’s parameters to optimize model performance. For this, I used GrigSearchCV to return a summary of: (1) model's accuracy scores and (2) the optimal parameters.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">from sklearn.grid_search import GridSearchCV
+from sklearn.cross_validation import cross_val_score
+
+param_grid = {&#39;learning_rate&#39;: [0.2],
+              &#39;max_depth&#39;: [10, 15, 20],
+              &#39;min_samples_leaf&#39;: [10, 20],
+              &#39;subsample&#39;: [0.7, 0.8]}
+estimator = GradientBoostingClassifier(loss=&#34;deviance&#34;,
+                                     random_state=0,
+                                     n_estimators=10)
+gs_cv = GridSearchCV(estimator,
+                     param_grid,
+                     scoring=&#39;accuracy&#39;,
+                     cv=10,
+                     n_jobs=-1)
+scores = cross_val_score(gs_cv, X_train, y_train, scoring=&#39;accuracy&#39;, cv=5)
+print(&#39;CV accuracy: %.3f +/- %.3f&#39; % (np.mean(scores), np.std(scores)))
+gs_cv.fit(X_train, y_train)
+
+print(&#39;Best Grid Search CV accuracy score: %s&#39; % gs_cv.best_score_)
+print(&#39;Optimal Depth: %s&#39; % gs_cv.best_estimator_.max_depth)
+gs_cv.best_params_
+
+CV accuracy: 0.724 +/- 0.012
+Best Grid Search CV accuracy score: 0.739256976545
+Optimal Depth: 15 
+{&#39;learning_rate&#39;: 0.2,
+ &#39;max_depth&#39;: 15,
+ &#39;min_samples_leaf&#39;: 10,
+ &#39;subsample&#39;: 0.8}
+</code></pre></div><p>The above code combines k-fold cross-validation with grid search to fine-tune machine learning model performance. More specifically, nested cross-validation first splits the data into training and test folds in an outer k-fold loop before an inner loop is used to fine-tune the model's parameters. A test fold (from the outer loop) is finally used to evaluate the model performance, leading to <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1397873/">a true error for the estimate that is almost unbiased relative to the test set</a>. <a href="http://sebastianraschka.com/blog/2015/writing-pymle.html">Raschka</a> provides an excellent summary of this concept in there following figure, where there are five outer and two inner folds (i.e. 5x2 cross-validation).</p>
+<figure class="centered">
+    <img src="https://niallmartin.github.io/images/coding_prediction_models/cross_validation.png"
+         alt="Nested Cross Validation"/> 
+</figure>
+
+<h1 id="tuning-the-number-of-estimators-with-validation-curves">Tuning the number of estimators with Validation Curves</h1>
+<p>The GBM performance will always improve as the number of estimators is increased. Overfitting can, however, start to become an issue with more ensembles, which is why validation curves are used to visualise and improve model performance.  These are constructed by plotting the error on both the training and validation sets as a function of the estimators used, where the following code generates such a curve.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">from sklearn.learning_curve import validation_curve
+
+param_range = range(1,50,1)
+clf = GradientBoostingClassifier(learning_rate = 0.2,
+ max_depth = 15,
+ min_samples_leaf = 10,
+ subsample = 0.8)
+train_scores, test_scores = validation_curve(
+ estimator=clf,
+ X=X_train,
+ y=y_train,
+ param_name=&#39;n_estimators&#39;,
+ param_range=param_range,
+ cv=4,
+ n_jobs=-1)
+
+train_mean = np.mean(train_scores, axis=1)
+train_std = np.std(train_scores, axis=1)
+test_mean = np.mean(test_scores, axis=1)
+test_std = np.std(test_scores, axis=1)
+
+
+plt.style.use(&#39;ggplot&#39;)
+plt.plot(param_range, train_mean,
+         color=&#39;blue&#39;, marker=&#39;o&#39;,
+         markersize=5, label=&#39;training accuracy&#39;)
+
+plt.fill_between(param_range, train_mean + train_std,
+                 train_mean - train_std, alpha=0.35,
+                 color=&#39;blue&#39;)
+
+plt.plot(param_range, test_mean,
+         color=&#39;green&#39;, linestyle=&#39;--&#39;,
+         marker=&#39;s&#39;, markersize=5,
+         label=&#39;validation accuracy&#39;)
+
+plt.fill_between(param_range,
+                 test_mean + test_std,
+                 test_mean - test_std,
+                 alpha=0.10, color=&#39;green&#39;)
+
+plt.grid()
+plt.legend(loc=&#39;lower right&#39;, fontsize = 20)
+plt.title(&#39;Error vs. Number of Estimators&#39;, fontsize=20)
+plt.xlabel(&#39;Number of Estimator&#39;, fontsize = 20)
+plt.ylabel(&#39;Accuracy&#39;, fontsize = 20)
+plt.xticks(fontsize = 18)
+plt.yticks(fontsize = 18)
+plt.ylim([0.55, 1.01])
+plt.tight_layout()
+plt.show()
+
+</code></pre></div><figure class="centered">
+    <img src="https://niallmartin.github.io/images/coding_prediction_models/validation_curve.png"
+         alt="Results Curve"/> 
+</figure>
+
+<p>This validation_curve function uses stratified k-fold cross-validation to estimate the performance of classification models . Inside, I specified the parameter that we wanted to evaluate, in this case is the number of estimators (n_estimators). The resulting plot indicates that the model begins to overfit as the number of estimates increases beyond approximately 10 and moving forward, I set n_estimators to 8, rather than 50 to avoid overfitting.</p>
+<h1 id="roc-curve">ROC Curve</h1>
+<p>Finally, I plot a Receiver Operating Curve (ROC) to access the performance of the GBM with respect to the false positive and true positive predictions. A perfect classifier would fall into the top-left corner of the graph, where the true positive rate would be 1 and the false positive rate would be 0. I can also compute the area under the curve (AUC) which represents the performance of the GBM. The plot shows that I have been able to achieve reasonable high performance from the GBM, and yields additional insights into the classifier's performance when dealing with imbalanced samples.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sns.set_style(&#34;darkgrid&#34;)
+
+Defaulted_RF_Prediction = gs_cv.predict_proba(X_test)
+fpr, tpr, _ = roc_curve(y_test, Defaulted_RF_Prediction[:,1])
+#fpr, tpr, thresh = roc_curve(y_test, Defaulted_RF_Prediction[:,1], pos_label=1,sample_weight=weights)
+ROC_DF = pd.DataFrame(dict(fpr=fpr, tpr=tpr))
+
+plt.figure(2)
+title = &#39;ROC Curve, AUC = {}&#39;.format(round(auc(fpr, tpr),2))
+plt.title(title, fontsize = 20)
+
+plt.plot(fpr, tpr,&#39;r&#39;)
+plt.plot([0, 1], [0, 1], &#39;k--&#39;)
+plt.xticks(fontsize = 20)
+plt.yticks(fontsize = 20)
+plt.xlabel(&#39;False Positive Rate&#39;, fontsize = 20)
+plt.ylabel(&#39;True Positive Rate&#39;, fontsize = 20)
+plt.show()
+</code></pre></div><figure class="centered">
+    <img src="https://niallmartin.github.io/images/coding_prediction_models/roc_curve.png"
+         alt="ROC Curve"/> 
+</figure>
+
+<h1 id="summary">Summary</h1>
+<p>This post briefly runs through the steps required to develop a Gradient Boosted Model in scikit-learn. With further feature extraction, additional improvements can be made to improve performance. The initial results are promising but, more importantly, the development of this simple boosted models was a fun way to spend an evening!</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "niallmartin" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Data science and machine learning blog</p>
+    
+    
+      
+        © 2020
+      
+       indicium artificium 
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-48181177-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+
+</html>
