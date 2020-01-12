@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Resources on niallmartin</title>
+    <title>Resources on Niall Martin</title>
     <link>https://niallmartin.github.io/categories/resources/</link>
-    <description>Recent content in Resources on niallmartin</description>
+    <description>Recent content in Resources on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 11 Jan 2019 10:58:32 +0000</lastBuildDate>
@@ -18,6 +18,16 @@
       
       <guid>https://niallmartin.github.io/posts/data-science-resources/</guid>
       <description>Hi Folks</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://niallmartin.github.io/about/</link>
+      <pubDate>Sat, 03 Nov 2018 10:58:32 +0000</pubDate>
+      
+      <guid>https://niallmartin.github.io/about/</guid>
+      <description>I’m a data scientist from Ireland, with a doctorate in Machine Learning from the University of Cambridge. During my PhD, I specialised in the development of machine learning models to determine how vehicle manufacturers cheated fuel consumption standards. I’m also a Fellow of the Insight Data Science program in Palo Alto, and work in Google’s Trust &amp;amp; Safety team in Dublin.
+Beyond my academic experiences, I enjoy skiing, cycling , and reading non-fiction.</description>
     </item>
     
   </channel>
