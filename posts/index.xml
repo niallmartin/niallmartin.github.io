@@ -6,18 +6,39 @@
     <description>Recent content in Posts on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Jan 2019 10:58:32 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 May 2019 10:58:32 +0000</lastBuildDate>
     
 	<atom:link href="https://niallmartin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Data Science Resources</title>
-      <link>https://niallmartin.github.io/posts/data-science-resources/</link>
-      <pubDate>Fri, 11 Jan 2019 10:58:32 +0000</pubDate>
+      <title>Recommended Reading for Data Scientists</title>
+      <link>https://niallmartin.github.io/posts/recommended-reading-for-data-scientists/</link>
+      <pubDate>Fri, 24 May 2019 10:58:32 +0000</pubDate>
       
-      <guid>https://niallmartin.github.io/posts/data-science-resources/</guid>
-      <description>Hi Folks</description>
+      <guid>https://niallmartin.github.io/posts/recommended-reading-for-data-scientists/</guid>
+      <description>Getting started in data science can be a daunting task. The area is broad, with little guidance on where one topic start and the next ends. Because of that, I&#39;ve pulled together this list of resources that particularly helped me when I was starting out.
+I&#39;ve broken the links into the following four categories, each of which distinguishes between the different skills required data scientists:
+ Data Analytics - Involves feature engineering and statistical tests.</description>
+    </item>
+    
+    <item>
+      <title>How to Start Learning Deep Learning</title>
+      <link>https://niallmartin.github.io/posts/how-to-start-learning-deep-learning/</link>
+      <pubDate>Wed, 23 May 2018 10:58:32 +0000</pubDate>
+      
+      <guid>https://niallmartin.github.io/posts/how-to-start-learning-deep-learning/</guid>
+      <description>The Basics Due to the recent achievements of artificial neural networks across many different tasks (such as face recognition, object detection and Go), deep learning has become extremely popular. This post aims to be a starting point for those interested in learning more about it.
+If you already have a basic understanding of linear algebra, calculus, probability and programming:  I recommend starting with Stanford’s CS231n. The course notes are comprehensive and written well.</description>
+    </item>
+    
+    <item>
+      <title>The Simpler Derivation of Logistic Regression</title>
+      <link>https://niallmartin.github.io/posts/the-simpler-derivation-of-logistic-regression/</link>
+      <pubDate>Wed, 11 Jan 2017 10:58:32 +0000</pubDate>
+      
+      <guid>https://niallmartin.github.io/posts/the-simpler-derivation-of-logistic-regression/</guid>
+      <description>Main Derivation Logistic regression is one of the most popular ways to fit models for categorical data, especially for binary response data. It is the most important (and probably most used) member of a class of models called generalized linear models. Unlike linear regression, logistic regression can directly predict probabilities (values that are restricted to the (0,1) interval); furthermore, those probabilities are well-calibrated when compared to the probabilities predicted by some other classifiers, such as Naive Bayes.</description>
     </item>
     
   </channel>

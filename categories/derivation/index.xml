@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Derivation on Niall Martin</title>
+    <link>https://niallmartin.github.io/categories/derivation/</link>
+    <description>Recent content in Derivation on Niall Martin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Jan 2017 10:58:32 +0000</lastBuildDate>
+    
+	<atom:link href="https://niallmartin.github.io/categories/derivation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Simpler Derivation of Logistic Regression</title>
+      <link>https://niallmartin.github.io/posts/the-simpler-derivation-of-logistic-regression/</link>
+      <pubDate>Wed, 11 Jan 2017 10:58:32 +0000</pubDate>
+      
+      <guid>https://niallmartin.github.io/posts/the-simpler-derivation-of-logistic-regression/</guid>
+      <description>Main Derivation Logistic regression is one of the most popular ways to fit models for categorical data, especially for binary response data. It is the most important (and probably most used) member of a class of models called generalized linear models. Unlike linear regression, logistic regression can directly predict probabilities (values that are restricted to the (0,1) interval); furthermore, those probabilities are well-calibrated when compared to the probabilities predicted by some other classifiers, such as Naive Bayes.</description>
+    </item>
+    
+  </channel>
+</rss>

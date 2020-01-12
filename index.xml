@@ -6,18 +6,20 @@
     <description>Recent content on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Jan 2019 10:58:32 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 May 2019 10:58:32 +0000</lastBuildDate>
     
 	<atom:link href="https://niallmartin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Data Science Resources</title>
-      <link>https://niallmartin.github.io/posts/data-science-resources/</link>
-      <pubDate>Fri, 11 Jan 2019 10:58:32 +0000</pubDate>
+      <title>Recommended Reading for Data Scientists</title>
+      <link>https://niallmartin.github.io/posts/recommended-reading-for-data-scientists/</link>
+      <pubDate>Fri, 24 May 2019 10:58:32 +0000</pubDate>
       
-      <guid>https://niallmartin.github.io/posts/data-science-resources/</guid>
-      <description>Hi Folks</description>
+      <guid>https://niallmartin.github.io/posts/recommended-reading-for-data-scientists/</guid>
+      <description>Getting started in data science can be a daunting task. The area is broad, with little guidance on where one topic start and the next ends. Because of that, I&#39;ve pulled together this list of resources that particularly helped me when I was starting out.
+I&#39;ve broken the links into the following four categories, each of which distinguishes between the different skills required data scientists:
+ Data Analytics - Involves feature engineering and statistical tests.</description>
     </item>
     
     <item>
@@ -28,6 +30,38 @@
       <guid>https://niallmartin.github.io/about/</guid>
       <description>I’m a data scientist from Ireland, with a doctorate in Machine Learning from the University of Cambridge. During my PhD, I specialised in the development of machine learning models to determine how vehicle manufacturers cheated fuel consumption standards. I’m also a Fellow of the Insight Data Science program in Palo Alto, and work in Google’s Trust &amp;amp; Safety team in Dublin.
 Beyond my academic experiences, I enjoy skiing, cycling , and reading non-fiction.</description>
+    </item>
+    
+    <item>
+      <title>Quotes</title>
+      <link>https://niallmartin.github.io/quotes/</link>
+      <pubDate>Wed, 31 Oct 2018 21:45:29 +0530</pubDate>
+      
+      <guid>https://niallmartin.github.io/quotes/</guid>
+      <description>Curated list of my favourite quotes, aphorisms, adages and maxims
+ &amp;#34;We do not learn from experience... we learn from reflecting on experience.&amp;#34; John Dewey tags: life
+ &amp;#34;All animals are equal but some animals are more equal than others.&amp;#34; Animal Farm, George Orwell tags: equality, society
+ “Be the change that you wish to see in the world.” Mahatma Gandhi tags: motivation
+ “Fill the unforgiving minute with sixty seconds&amp;#39; worth of distance run.</description>
+    </item>
+    
+    <item>
+      <title>How to Start Learning Deep Learning</title>
+      <link>https://niallmartin.github.io/posts/how-to-start-learning-deep-learning/</link>
+      <pubDate>Wed, 23 May 2018 10:58:32 +0000</pubDate>
+      
+      <guid>https://niallmartin.github.io/posts/how-to-start-learning-deep-learning/</guid>
+      <description>The Basics Due to the recent achievements of artificial neural networks across many different tasks (such as face recognition, object detection and Go), deep learning has become extremely popular. This post aims to be a starting point for those interested in learning more about it.
+If you already have a basic understanding of linear algebra, calculus, probability and programming:  I recommend starting with Stanford’s CS231n. The course notes are comprehensive and written well.</description>
+    </item>
+    
+    <item>
+      <title>The Simpler Derivation of Logistic Regression</title>
+      <link>https://niallmartin.github.io/posts/the-simpler-derivation-of-logistic-regression/</link>
+      <pubDate>Wed, 11 Jan 2017 10:58:32 +0000</pubDate>
+      
+      <guid>https://niallmartin.github.io/posts/the-simpler-derivation-of-logistic-regression/</guid>
+      <description>Main Derivation Logistic regression is one of the most popular ways to fit models for categorical data, especially for binary response data. It is the most important (and probably most used) member of a class of models called generalized linear models. Unlike linear regression, logistic regression can directly predict probabilities (values that are restricted to the (0,1) interval); furthermore, those probabilities are well-calibrated when compared to the probabilities predicted by some other classifiers, such as Naive Bayes.</description>
     </item>
     
   </channel>
