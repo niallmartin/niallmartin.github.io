@@ -16,20 +16,20 @@
     <meta property="og:title" content="Classification Model to Predict Loan Default" />
 <meta property="og:description" content="Introduction to my Insight Data Science project." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://niallmartin.github.io/posts/classification-model-to-predict-loan-default/" />
+<meta property="og:url" content="https://niallmartin.io/posts/classification-model-to-predict-loan-default/" />
 <meta property="article:published_time" content="2016-08-19T00:00:00+01:00" />
 <meta property="article:modified_time" content="2016-08-19T00:00:00+01:00" />
 
 
     
-      <base href="https://niallmartin.github.io/posts/classification-model-to-predict-loan-default/">
+      <base href="https://niallmartin.io/posts/classification-model-to-predict-loan-default/">
     
     <title>
   Classification Model to Predict Loan Default · Niall Martin
 </title>
 
     
-      <link rel="canonical" href="https://niallmartin.github.io/posts/classification-model-to-predict-loan-default/">
+      <link rel="canonical" href="https://niallmartin.io/posts/classification-model-to-predict-loan-default/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
@@ -39,7 +39,7 @@
     
       
       
-      <link rel="stylesheet" href="https://niallmartin.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+      <link rel="stylesheet" href="https://niallmartin.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
     
 
     
@@ -47,15 +47,15 @@
     
 
     
-      <link rel="stylesheet" href="https://niallmartin.github.io/custom.css" />
+      <link rel="stylesheet" href="https://niallmartin.io/custom.css" />
     
 
     
 
     
 
-    <link rel="icon" type="image/png" href="https://niallmartin.github.io/images/logo.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://niallmartin.github.io/images/logo.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://niallmartin.io/images/logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://niallmartin.io/images/logo.png" sizes="16x16">
 
     <meta name="generator" content="Hugo 0.62.2" />
   </head>
@@ -66,7 +66,7 @@
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="https://niallmartin.github.io/">
+    <a class="navigation-title" href="https://niallmartin.io/">
       Niall Martin
     </a>
     <input type="checkbox" id="menu-toggle" />
@@ -75,11 +75,11 @@
       
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://niallmartin.github.io/about/">ABOUT</a>
+            <a class="navigation-link" href="https://niallmartin.io/about/">ABOUT</a>
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://niallmartin.github.io/posts/">BLOG</a>
+            <a class="navigation-link" href="https://niallmartin.io/posts/">BLOG</a>
           </li>
         
           <li class="navigation-item">
@@ -87,7 +87,7 @@
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://niallmartin.github.io/quotes/">QUOTES</a>
+            <a class="navigation-link" href="https://niallmartin.io/quotes/">QUOTES</a>
           </li>
         
       
@@ -120,7 +120,7 @@
           </div>
           <div class="categories">
   <i class="fas fa-folder"></i>
-    <a href="https://niallmartin.github.io/categories/coding/">Coding</a></div>
+    <a href="https://niallmartin.io/categories/coding/">Coding</a></div>
 
           
         </div>
@@ -128,7 +128,7 @@
 
       <div>
         <figure class="centered">
-    <img src="https://niallmartin.github.io/images/insight_project/introduction.jpg"
+    <img src="https://niallmartin.io/images/insight_project/introduction.jpg"
          alt="Zadisha"/> 
 </figure>
 
@@ -137,7 +137,7 @@
 <p>Zidisha is a non-profit startup that allows entrepreneurs in developing countries to request credit. Using a crowdsourcing financial model, individuals like Bineta are able to raise the necessary funds to grow their business. This approach allows entrepreneurs to develop sustainable businesses, and provides jobs for additional members in the community.</p>
 <h4 id="binetas-story">Bineta's Story</h4>
 <figure class="centered">
-    <img src="https://niallmartin.github.io/images/insight_project/bineta.png"
+    <img src="https://niallmartin.io/images/insight_project/bineta.png"
          alt="bineta" height="250"/> 
 </figure>
 
@@ -158,7 +158,7 @@
 <p>I broke the problem into a pipeline with several stages, going from data storage to classification.</p>
 <p><strong>Data Storage &amp; Cleaning:</strong> Features from over 30,000 records were combined from multiple tables in MySQL, with records cleaned (e.g. imputing and one-hot encoding) and plotted to identify trends. For example, the average defaulting person was shown to have 100 fewer Facebook friends compared to borrowers who paid in full, indicating that a wider social network maximises the likelihood of success!</p>
 <figure class="float-right">
-    <img src="https://niallmartin.github.io/images/insight_project/data_pipeline.png"
+    <img src="https://niallmartin.io/images/insight_project/data_pipeline.png"
          alt="Pipeline"/> 
 </figure>
 
@@ -168,14 +168,14 @@
 <p><strong>Parameter Tuning:</strong>  The model was initialized from historical data, after which the hyper parameters were optimised using grid search. From there, it was a simple matter of predicting each borrower's likelihood of default on the test dataset.</p>
 <p><strong>Feature Extraction:</strong> During the latter stages of model development, I identified features that best predict loan default. Random forest provides a natural way to assess the importance of independent condtions, and the anonymized results from this process are shown in the following graph. These results are, however, subject to a number of limitations, but I'll leave it up to the reader do some extra reading on that!</p>
 <figure class="centered">
-    <img src="https://niallmartin.github.io/images/insight_project/feature_importance.png"
+    <img src="https://niallmartin.io/images/insight_project/feature_importance.png"
          alt="Feature Importance"/> 
 </figure>
 
 <h1 id="model-validation-and-results">Model Validation and Results</h1>
 <p>Each model is only as good as the accuracy of its predictions. With that in mind, I tested the results on a separate dataset never before seen by the model, quantifying the accuracy with 10-fold cross validation. The R2 score of 74% showed that the Gradient Boosted Model does a great job classifying defaults, and this really give me confidence in the results.</p>
 <figure class="centered">
-    <img src="https://niallmartin.github.io/images/insight_project/roc_curve.png"
+    <img src="https://niallmartin.io/images/insight_project/roc_curve.png"
          alt="ROC Curve"/> 
 </figure>
 

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Analysis on Niall Martin</title>
-    <link>https://niallmartin.github.io/categories/analysis/</link>
+    <link>https://niallmartin.io/categories/analysis/</link>
     <description>Recent content in Analysis on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://niallmartin.github.io/categories/analysis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://niallmartin.io/categories/analysis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Stock Market: Analysing and Predicting Trends</title>
-      <link>https://niallmartin.github.io/posts/stock-market-analysing-and-predicting-trends/</link>
+      <link>https://niallmartin.io/posts/stock-market-analysing-and-predicting-trends/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://niallmartin.github.io/posts/stock-market-analysing-and-predicting-trends/</guid>
+      <guid>https://niallmartin.io/posts/stock-market-analysing-and-predicting-trends/</guid>
       <description></description>
     </item>
     

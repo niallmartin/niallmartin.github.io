@@ -16,20 +16,20 @@
     <meta property="og:title" content="The Simpler Derivation of Logistic Regression" />
 <meta property="og:description" content="This is a repost from Nina Zumel, but this is by far the best derivation of logistic regression I&#39;ve come across." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://niallmartin.github.io/posts/the-simpler-derivation-of-logistic-regression/" />
+<meta property="og:url" content="https://niallmartin.io/posts/the-simpler-derivation-of-logistic-regression/" />
 <meta property="article:published_time" content="2017-01-11T10:58:32+00:00" />
 <meta property="article:modified_time" content="2017-01-11T10:58:32+00:00" />
 
 
     
-      <base href="https://niallmartin.github.io/posts/the-simpler-derivation-of-logistic-regression/">
+      <base href="https://niallmartin.io/posts/the-simpler-derivation-of-logistic-regression/">
     
     <title>
   The Simpler Derivation of Logistic Regression · Niall Martin
 </title>
 
     
-      <link rel="canonical" href="https://niallmartin.github.io/posts/the-simpler-derivation-of-logistic-regression/">
+      <link rel="canonical" href="https://niallmartin.io/posts/the-simpler-derivation-of-logistic-regression/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
@@ -39,7 +39,7 @@
     
       
       
-      <link rel="stylesheet" href="https://niallmartin.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+      <link rel="stylesheet" href="https://niallmartin.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
     
 
     
@@ -47,15 +47,15 @@
     
 
     
-      <link rel="stylesheet" href="https://niallmartin.github.io/custom.css" />
+      <link rel="stylesheet" href="https://niallmartin.io/custom.css" />
     
 
     
 
     
 
-    <link rel="icon" type="image/png" href="https://niallmartin.github.io/images/logo.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://niallmartin.github.io/images/logo.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://niallmartin.io/images/logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://niallmartin.io/images/logo.png" sizes="16x16">
 
     <meta name="generator" content="Hugo 0.62.2" />
   </head>
@@ -66,7 +66,7 @@
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="https://niallmartin.github.io/">
+    <a class="navigation-title" href="https://niallmartin.io/">
       Niall Martin
     </a>
     <input type="checkbox" id="menu-toggle" />
@@ -75,11 +75,11 @@
       
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://niallmartin.github.io/about/">ABOUT</a>
+            <a class="navigation-link" href="https://niallmartin.io/about/">ABOUT</a>
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://niallmartin.github.io/posts/">BLOG</a>
+            <a class="navigation-link" href="https://niallmartin.io/posts/">BLOG</a>
           </li>
         
           <li class="navigation-item">
@@ -87,7 +87,7 @@
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://niallmartin.github.io/quotes/">QUOTES</a>
+            <a class="navigation-link" href="https://niallmartin.io/quotes/">QUOTES</a>
           </li>
         
       
@@ -120,7 +120,7 @@
           </div>
           <div class="categories">
   <i class="fas fa-folder"></i>
-    <a href="https://niallmartin.github.io/categories/derivation/">Derivation</a></div>
+    <a href="https://niallmartin.io/categories/derivation/">Derivation</a></div>
 
           
         </div>
@@ -132,50 +132,50 @@
 <p>While you don’t have to know how to derive logistic regression or how to implement it in order to use it, the details of its derivation give important insights into interpreting and troubleshooting the resulting models. Unfortunately, most derivations (like the ones in [Agresti, 1990] or [Hastie, et.al, 2009]) are too terse for easy comprehension. Here, we give a derivation that is less terse (and less general than Agresti’s), and we’ll take the time to point out some details and useful facts that sometimes get lost in the discussion.</p>
 <p>To make the discussion easier, we will focus on the binary response case. We assume that the case of interest (or “true”) is coded to 1, and the alternative case (or “false”) is coded to 0.</p>
 <p>The logistic regression model assumes that the log-odds of an observation y can be expressed as a linear function of the K input variables x:</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_1.jpg" alt="logistic_regression_1"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_1.jpg" alt="logistic_regression_1"></p>
 <p>Here, we add the constant term b0, by setting x0 = 1. This gives us K+1 parameters. The left hand side of the above equation is called the logit of P (hence, the name logistic regression).</p>
 <p>Let’s take the exponent of both sides of the logit equation.</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_2.jpg" alt="logistic_regression_2"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_2.jpg" alt="logistic_regression_2"></p>
 <p>This immediately tells us that logistic models are multiplicative in their inputs (rather than additive, like a linear model), and it gives us a way to interpret the coefficients. The value exp(bj) tells us how the odds of the response being “true” increase (or decrease) as xj increases by one unit, all other things being equal. For example, suppose bj = 0.693. Then exp(bj) = 2. If xj is a numerical variable (say, age in years), then every year’s increase in age doubles the odds of the response being true — all other things being equal. If xj is a binary variable (say, sex, with female coded as 1 and male as 0), then if the subject is female, then the response is two times more likely to be true than if the subject is male, all other things being equal.</p>
 <p>We can also invert the logit equation to get a new expression for P(x):</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_3.jpg" alt="logistic_regression_3"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_3.jpg" alt="logistic_regression_3"></p>
 <p>The right hand side of the top equation is the sigmoid of z, which maps the real line to the interval (0, 1), and is approximately linear near the origin. A useful fact about P(z) is that the derivative P&rsquo;(z) = P(z) (1 – P(z)). Here’s the derivation:</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_4.jpg" alt="logistic_regression_4"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_4.jpg" alt="logistic_regression_4"></p>
 <p>Later, we will want to take the gradient of P with respect to the set of coefficients b, rather than z. In that case, P&rsquo;(z) = P(z) (1 – P(z))z‘, where ‘ is the gradient taken with respect to b.</p>
 <p>The solution to a Logistic Regression problem is the set of parameters that maximizes the likelihood of the data, which is expressed as the product of the predicted probabilities of the N individual observations.</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_5.jpg" alt="logistic_regression_5"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_5.jpg" alt="logistic_regression_5"></p>
 <p>(X, y) is the set of observations; X is a K+1 by N matrix of inputs, where each column corresponds to an observation, and the first row is 1; y is an N-dimensional vector of responses; and (xi, yi) are the individual observations.</p>
 <p>It’s generally easier to work with the log of this expression, known (of course) as the log-likelihood.</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_6.jpg" alt="logistic_regression_6"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_6.jpg" alt="logistic_regression_6"></p>
 <p>Maximizing the log-likelihood will maximize the likelihood. As a side note, the quantity −2*log-likelihood is called the deviance of the model. It is analogous to the residual sum of squares (RSS) of a linear model. Ordinary least squares minimizes RSS; logistic regression minimizes deviance. A useful goodness-of-fit heuristic for a logistic regression model is to compare the deviance of the model with the so-called null deviance: the deviance of the constant model that returns only the global response probability for every data point. One minus the ratio of deviance to null deviance is sometimes called pseudo-R2, and is used the way one would use R2 to evaluate a linear model.</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_7.jpg" alt="logistic_regression_7"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_7.jpg" alt="logistic_regression_7"></p>
 <p>Traditional derivations of Logistic Regression tend to start by substituting the logit function directly into the log-likelihood equations, and expanding from there. The derivation is much simpler if we don’t plug the logit function in immediately. To maximize the log-likelihood, we take its gradient with respect to b:</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_8.jpg" alt="logistic_regression_8"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_8.jpg" alt="logistic_regression_8"></p>
 <p>where Pi is shorthand for P(xi). The maximum occurs where the gradient is zero.</p>
 <p>We can expand this equation further, when we remember that P’ = P(1-P):</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_9.jpg" alt="logistic_regression_9"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_9.jpg" alt="logistic_regression_9"></p>
 <p>The last line merges the two cases (yi = 1 and yi = 0) into a single sum. We can now cancel terms and set the gradient to zero. This gives us the set of simultaneous equations that are true at the optimum:</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_10.jpg" alt="logistic_regression_10"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_10.jpg" alt="logistic_regression_10"></p>
 <p>Notice that the equations to be solved are in terms of the probabilities P (which are a function of b), not directly in terms of the coefficients bthemselves. This means that logistic models are coordinate-free: for a given set of input variables, the probabilities returned by the model will be the same even if the variables are shifted, combined, or rescaled. Only the values of the coefficients will change.</p>
 <p>The other thing to notice from the above equations is that the sum of probability mass across each coordinate of the xi vectors is equal to the count of observations with that coordinate value for which the response was true. For example, suppose the jth input variable is 1 if the subject is female, 0 if the subject is male. Then</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_11.jpg" alt="logistic_regression_11"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_11.jpg" alt="logistic_regression_11"></p>
 <p>In other words, the summed probability mass for the female subjects equals the count of female subjects with the response “true”. It is also true that the sum of all the probability mass over the entire training set will equal the number of “true” responses in the training set. This is what we mean when we say that logistic regression preserves the marginal probabilities of the training data.</p>
 <h2 id="solving-for-the-coefficients">Solving for the Coefficients</h2>
 <p>The most straightforward way to solve for the coefficients b is Newton’s method. The Fisher scoring method that is used in most off-the-shelf implementations is a more general variation of Newton’s method; it works on the same principles. We will describe solving for the coefficients using Newton’s method.</p>
 <p>Suppose you have a vector valued function f: y = f(b). You want to find the value bo such that  f(b)opt = 0. Assuming that we start with an initial guess b0, we can take the Taylor expansion of f around b0:</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_12.jpg" alt="logistic_regression_12"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_12.jpg" alt="logistic_regression_12"></p>
 <p>Here, f‘ is a matrix; it is the Jacobean of first derivatives of f with respect to b. Setting the left hand side to zero, we can solve for Δ as</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_13.jpg" alt="logistic_regression_13"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_13.jpg" alt="logistic_regression_13"></p>
 <p>We then update our estimate for b:</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_14.jpg" alt="logistic_regression_14"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_14.jpg" alt="logistic_regression_14"></p>
 <p>and iterate until convergence.</p>
 <p>In our case, f is the gradient of the log-likelihood, and its Jacobean is the Hessian (the matrix of second derivatives) of the log-likelihood function.</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_15.jpg" alt="logistic_regression_15"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_15.jpg" alt="logistic_regression_15"></p>
 <p>where W is a diagonal matrix of the derivatives P’i, and the ith column of X corresponds to the ith observation. So we can solve for Δ at each iteration as</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_16.jpg" alt="logistic_regression_16"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_16.jpg" alt="logistic_regression_16"></p>
 <p>where W is the current matrix of derivatives, y is the vector of observed responses, and Pk is the vector of probabilities as calculated by the current estimate of b.</p>
 <p>Compare this to the solution of a linear regression:</p>
-<p><img src="https://niallmartin.github.io/images/logistic_regression/logistic_regression_17.jpg" alt="logistic_regression_17"></p>
+<p><img src="https://niallmartin.io/images/logistic_regression/logistic_regression_17.jpg" alt="logistic_regression_17"></p>
 <p>Comparing the two, we can see that at each iteration, Δ is the solution of a weighted least square problem, where the “response” is the difference between the observed response and its current estimated probability of being true. This is why the technique for solving logistic regression problems is sometimes referred to as iteratively re-weighted least squares. Generally, the method does not take long to converge (about 6 or so iterations).</p>
 <p>Thinking of logistic regression as a weighted least squares problem immediately tells you a few things that can go wrong, and how. For example, if some of the input variables are correlated, then the Hessian Hwill be ill-conditioned, or even singular. This will result in large error bars (or “loss of significance”) around the estimates of certain coefficients. It can also result in coefficients with excessively large magnitudes, and often the wrong sign. If an input perfectly predicts the response for some subset of the data (at no penalty on the rest of the data), then the term Pi (1 – Pi) will be driven to zero for that subset, which will drive the coefficient for that input to infinity (if the input perfectly predicted all the data, then the residual (y – Pk) has already gone to zero, which means that you are already at the optimum).</p>
 <p>On the other hand, the least squares analogy also gives us the solution to these problems: regularized regression, such as lasso or ridge. Regularized regression penalizes excessively large coefficients, and keeps them bounded. If you are implementing your own logistic regression procedure, rather than using a package, then it is straightforward to implement a regularized least squares for the iteration step (as <a href="http://www.win-vector.com/blog/2010/11/learn-a-powerful-machine-learning-tool-logistic-regression-and-beyond/">Win-Vector has done</a>). But even if you are using an off-the-shelf implementation, the above discussion will help give you a sense of how to interpret the coefficients of your model, and how to recognize and troubleshoot some issues that might arise.</p>

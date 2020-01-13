@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Niall Martin</title>
-    <link>https://niallmartin.github.io/categories/</link>
+    <link>https://niallmartin.io/categories/</link>
     <description>Recent content in Categories on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://niallmartin.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://niallmartin.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Analysis</title>
-      <link>https://niallmartin.github.io/categories/analysis/</link>
+      <link>https://niallmartin.io/categories/analysis/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://niallmartin.github.io/categories/analysis/</guid>
+      <guid>https://niallmartin.io/categories/analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Resources</title>
-      <link>https://niallmartin.github.io/categories/resources/</link>
+      <link>https://niallmartin.io/categories/resources/</link>
       <pubDate>Fri, 24 May 2019 10:58:32 +0000</pubDate>
       
-      <guid>https://niallmartin.github.io/categories/resources/</guid>
+      <guid>https://niallmartin.io/categories/resources/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deep Learning</title>
-      <link>https://niallmartin.github.io/categories/deep-learning/</link>
+      <link>https://niallmartin.io/categories/deep-learning/</link>
       <pubDate>Wed, 23 May 2018 10:58:32 +0000</pubDate>
       
-      <guid>https://niallmartin.github.io/categories/deep-learning/</guid>
+      <guid>https://niallmartin.io/categories/deep-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Derivation</title>
-      <link>https://niallmartin.github.io/categories/derivation/</link>
+      <link>https://niallmartin.io/categories/derivation/</link>
       <pubDate>Wed, 11 Jan 2017 10:58:32 +0000</pubDate>
       
-      <guid>https://niallmartin.github.io/categories/derivation/</guid>
+      <guid>https://niallmartin.io/categories/derivation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Coding</title>
-      <link>https://niallmartin.github.io/categories/coding/</link>
+      <link>https://niallmartin.io/categories/coding/</link>
       <pubDate>Fri, 19 Aug 2016 00:00:00 +0100</pubDate>
       
-      <guid>https://niallmartin.github.io/categories/coding/</guid>
+      <guid>https://niallmartin.io/categories/coding/</guid>
       <description></description>
     </item>
     

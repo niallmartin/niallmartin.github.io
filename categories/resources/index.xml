@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Resources on Niall Martin</title>
-    <link>https://niallmartin.github.io/categories/resources/</link>
+    <link>https://niallmartin.io/categories/resources/</link>
     <description>Recent content in Resources on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 24 May 2019 10:58:32 +0000</lastBuildDate>
     
-	<atom:link href="https://niallmartin.github.io/categories/resources/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://niallmartin.io/categories/resources/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Recommended Reading for Data Scientists</title>
-      <link>https://niallmartin.github.io/posts/recommended-reading-for-data-scientists/</link>
+      <link>https://niallmartin.io/posts/recommended-reading-for-data-scientists/</link>
       <pubDate>Fri, 24 May 2019 10:58:32 +0000</pubDate>
       
-      <guid>https://niallmartin.github.io/posts/recommended-reading-for-data-scientists/</guid>
+      <guid>https://niallmartin.io/posts/recommended-reading-for-data-scientists/</guid>
       <description>Getting started in data science can be a daunting task. The area is broad, with little guidance on where one topic start and the next ends. Because of that, I&#39;ve pulled together this list of resources that particularly helped me when I was starting out.
 I&#39;ve broken the links into the following four categories, each of which distinguishes between the different skills required data scientists:
  Data Analytics - Involves feature engineering and statistical tests.</description>

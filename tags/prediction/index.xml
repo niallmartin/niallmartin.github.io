@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prediction on Niall Martin</title>
-    <link>https://niallmartin.github.io/tags/prediction/</link>
+    <link>https://niallmartin.io/tags/prediction/</link>
     <description>Recent content in Prediction on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://niallmartin.github.io/tags/prediction/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://niallmartin.io/tags/prediction/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Stock Market: Analysing and Predicting Trends</title>
-      <link>https://niallmartin.github.io/posts/stock-market-analysing-and-predicting-trends/</link>
+      <link>https://niallmartin.io/posts/stock-market-analysing-and-predicting-trends/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://niallmartin.github.io/posts/stock-market-analysing-and-predicting-trends/</guid>
+      <guid>https://niallmartin.io/posts/stock-market-analysing-and-predicting-trends/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Building Classification Models</title>
-      <link>https://niallmartin.github.io/posts/building-classification-models/</link>
+      <link>https://niallmartin.io/posts/building-classification-models/</link>
       <pubDate>Thu, 11 Aug 2016 00:00:00 +0100</pubDate>
       
-      <guid>https://niallmartin.github.io/posts/building-classification-models/</guid>
+      <guid>https://niallmartin.io/posts/building-classification-models/</guid>
       <description>Building Building on information presented in my previous post, this articles describes how bagging and boosted can be used to build a classification model. The data is available from Kaggle, and represents the financial transactions from two hundred thousand individuals (each with 800 features).
 Using this dataset, I set about building a loan-default model. The overall pipeline for this project was split into a few stages, all of which are described below.</description>
     </item>
