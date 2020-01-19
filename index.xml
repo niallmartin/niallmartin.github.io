@@ -6,7 +6,7 @@
     <description>Recent content on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://niallmartin.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,11 +14,11 @@
     <item>
       <title>[Data Analysis] Dublin Property Trends</title>
       <link>https://niallmartin.io/posts/data-analysis-dublin-property-trends/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://niallmartin.io/posts/data-analysis-dublin-property-trends/</guid>
       <description>Analyse and Map Property Price Trends Looking for a house can be stressful. Where to go, what to spend, where the competition is. There&#39;s a lot of choice, but little analysis of the market as a whole.
-As such, I spend the day reviewing data from the Property Price Register - a live dataset of all residential properties purchased in Ireland since the 1st January 2010. With information relating to the Date of Sale, the Property Price (i.</description>
+As such, I spent the day reviewing data from the Property Price Register - a live dataset of all residential properties purchased in Ireland since the 1st January 2010. With information relating to the date of sale, sale price, and the address, this dataset provided me with enough base information to obtain the geospatial coordinates for all house sales using the Google Maps API.</description>
     </item>
     
     <item>

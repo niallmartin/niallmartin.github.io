@@ -17,8 +17,8 @@
 <meta property="og:description" content="Review of the Irish Property Market in 2010" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://niallmartin.io/posts/data-analysis-dublin-property-trends/" />
-<meta property="article:published_time" content="2020-01-09T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-09T00:00:00+00:00" />
+<meta property="article:published_time" content="2020-01-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-15T00:00:00+00:00" />
 
 
     
@@ -109,8 +109,8 @@
           <div class="date">
             <span class="posted-on">
               <i class="fas fa-calendar"></i>
-              <time datetime='2020-01-09T00:00:00Z'>
-                January 9, 2020
+              <time datetime='2020-01-15T00:00:00Z'>
+                January 15, 2020
               </time>
             </span>
             <span class="reading-time">
@@ -136,17 +136,17 @@
       <div>
         <h1 id="analyse-and-map-property-price-trends">Analyse and Map Property Price Trends</h1>
 <p>Looking for a house can be stressful. Where to go, what to spend, where the competition is. There's a lot of choice, but little analysis of the market as a whole.</p>
-<p>As such, I spend the day reviewing data from the <a href="https://www.propertypriceregister.ie/">Property Price Register</a> - a live dataset of all residential properties purchased in Ireland since the 1st January 2010. With information relating to the Date of Sale, the Property Price (i.e. sale price), and Address, I'm able to supplement the information with additional results from Google Maps (i.e. geospatial coordinates). With all this information, I'm then able to answer a few question about the property market in Dublin, including:</p>
+<p>As such, I spent the day reviewing data from the <a href="https://www.propertypriceregister.ie/">Property Price Register</a> - a live dataset of all residential properties purchased in Ireland since the 1st January 2010. With information relating to the date of sale, sale price, and the address, this dataset provided me with enough base information to obtain the geospatial coordinates for all house sales using the Google Maps API. For there, I was set to answer a few questions that I had about the property market in Dublin, including:</p>
 <ol>
-<li>What are mean and median sale prices for properties (i.e. houses and apartments) in Dublin?</li>
-<li>How  the prices changed over time?</li>
-<li>What is the distribution of property prices in Dublin? For example, are most properties over €500,000?</li>
+<li>What are mean and median sale prices for all Dublin houses and apartments?</li>
+<li>How have the prices changed since 2010?</li>
+<li>What is the distribution of property prices? For example, are most properties over €500,000?</li>
 <li>Where are the properties being sold?</li>
 <li>And finally, what is the most expensive location in Dublin?</li>
 </ol>
-<p>This post aims to answer those questions, demonstrating how data can be used to guide buyers and make better informed decision. Only the results of my analysis are discussed in this article, though the reader is encouraged to review <a href="https://colab.research.google.com/drive/1jj_gbZO37bwWvhcuoR7zT62TRxYFqKqf">this colab notbook</a> to see how the analysis was performed. But, if you'll indulge me, I will provide a very brief overview of my methodology in the following section.</p>
+<p>This post aims to answer those questions, and demonstrates how data can be used to help property buyers make better informed decisions. The main results are outline in this article, though the reader is encouraged to review <a href="https://colab.research.google.com/drive/1jj_gbZO37bwWvhcuoR7zT62TRxYFqKqf">this colab notbook</a> for a detailed description of all charts and code. A very brief description of the methodology is also outlined in the following section, with a more detailed list of assumptions available in <a href="https://colab.research.google.com/drive/1jj_gbZO37bwWvhcuoR7zT62TRxYFqKqf">the code</a>.</p>
 <h2 id="overview-of-methodology">Overview of Methodology</h2>
-<p>Having downloaded the data from the property price register (PPR), the next steps are (1): to adjust all prices for inflation and (2) to convert addresses into geographic coordinates. This latte process is referred to as Geocoding, and can be completed using the <a href="https://developers.google.com/maps/documentation/geocoding/start">Google Maps API</a>. Taking the messy PPR addresses, we're about to standardised the address and return the latitude and longitude coordinates for plotting. The overall process required the use of the following tools to complete the task:</p>
+<p>Having downloaded the data from the property price register (PPR), the next steps are (1): to adjust all prices for inflation and (2) to convert addresses into geographic coordinates. This latter process is referred to as Geocoding, and can be completed using the <a href="https://developers.google.com/maps/documentation/geocoding/start">Google Maps API</a>. Taking the messy PPR addresses, we're thus able to standardise all addresses, returning the latitude and longitude coordinates for plotting. The overall process required the use of the following tools to complete the task:</p>
 <ul>
 <li>Colab and Python as the coding environment and language</li>
 <li>Pandas, Numpy, Matplotlib and Seaborn to analyse and plot trends</li>
@@ -156,7 +156,7 @@
 <p>The reader is referred to <a href="https://colab.research.google.com/drive/1jj_gbZO37bwWvhcuoR7zT62TRxYFqKqf">this colab notebook</a> to review all code.</p>
 <h2 id="results">Results</h2>
 <h3 id="analysis-of-raw-volumes-and-prices">Analysis of Raw Volumes and Prices</h3>
-<p>The volume of sales has increased dramatically in Ireland since 2010. Indeed, Figure 1 distinctly shows the impact that the <a href="https://en.wikipedia.org/wiki/Post-2008_Irish_economic_downturn">Post-2008 recession</a> had on the Irish market, where the volume of Dublin properties being sold dipped to below 400 per month in 2011. Since that time, however, there has been a clear resurgence in property sales, with an average of 1,500 properties being sold in the Irish capital each month since the start of 2018.</p>
+<p>An analysis of annual sales data in Figure 1 shows how stark volumes of Irish property sales have changed since 2010. More specifically, the distinct impact of the <a href="https://en.wikipedia.org/wiki/Post-2008_Irish_economic_downturn">Post-2008 recession</a> is clearly observed in the initial years, where volumes of Dublin properties sales are shown to have dipped below 400 per month in 2011. Since that time, however, a clear resurgence in property sales has occurred, with an average of 1,500 properties being sold in the Irish capital each month since the start of 2018.</p>
 <figure>
     <img src="https://niallmartin.io/images/property_price_analysis/volume_of_sales.jpg"
          alt="raw_stock_price"/> <figcaption>
@@ -164,7 +164,8 @@
         </figcaption>
 </figure>
 
-<p>These trends are also reflected in the analysis of inflation-adjusted prices in Figure 2, where the mean monthly price is shown to have increased from a minimum of €260,000 in 2012 to €660,000 in 2018. Although this does put into perspective how dramatically the Irish property market has changed, such an analysis of mean prices needs to be taken <a href="https://www.cso.ie/en/releasesandpublications/in/rrppi/meanvsmedianinformationnote/">with a grain of salt</a>. Outliers tend to skew the data to be more extreme than what the average house sells form, which is better reflected using the review of median property price in the same chart. Though the absolute values have changed, the overall trend remains the same, with the average property selling from €176,000 in December 2011 to €352,000 in August 2018.</p>
+<p>These trends are also reflected in the analysis of inflation-adjusted prices in Figure 2, where the mean monthly price is shown to have increased from a minimum of €260,000 in 2012 to €660,000 in 2018.  This stark difference puts into perspective how dramatically the Irish property market has changed over the past decade, though it's important that any analysis of mean prices be taken <a href="https://www.cso.ie/en/releasesandpublications/in/rrppi/meanvsmedianinformationnote/">with a grain of salt</a>. Indeed, outliers tend to skew how much the average house in Dublin would have sold for (i.e. a few high value house sales would have pushed out the annual average mean), which is why the median value was plotted in Figure 2, providing a more representative metric of how much the average consumer should expect to spend. This shows that the average property sold for €176,000 in December 2011, and increased by 100% to €352,000 August 2018.</p>
+<p>And, no matter what metric we use to analyse the market, the overall trend remains the same - the boom is back and property prices have increased dramatically!</p>
 <figure>
     <img src="https://niallmartin.io/images/property_price_analysis/mean_median_prices.jpg"
          alt="raw_stock_price"/> <figcaption>
@@ -172,8 +173,8 @@
         </figcaption>
 </figure>
 
-<h3 id="annual-changes">Annual Changes</h3>
-<p>The plots for volume and price over time all show that the increase in price is tapering off. This trend is more accurately demonstrated with an analysis of year-over-year changes in median house prices in Figure 3, where annual increases have dropped from 15% in 2014 to a more modest changes of 1.4% last year.</p>
+<h3 id="year-over-year-changes">Year-over-Year Changes</h3>
+<p>An interesting observation from all plots of annual sales volumes/prices shows that any increase in price is tapering off. This trend is more accurately demonstrated with an analysis of year-over-year changes in median house prices in Figure 3, where annual increases are shown to have dropped from 15% in 2014 to a more modest changes of 1.4% last year.</p>
 <figure>
     <img src="https://niallmartin.io/images/property_price_analysis/maximum_annual_price_change.jpg"
          alt="raw_stock_price"/> <figcaption>
@@ -181,10 +182,10 @@
         </figcaption>
 </figure>
 
-<p>One other interesting trend to observe from the analysis of sale volumes in Figure 1 is the peak in property sales in November of each year. This is attributed to people not wanting to search for houses for another year, with Geralyn Byrne of Sherry Fitzgerald <a href="https://www.irishtimes.com/life-and-style/homes-and-property/what-is-the-best-month-to-sell-your-home-to-get-the-maximum-price-1.4138305">saying</a> “Traditionally November has always been a really terrific month for sales because you’ve got people who have been out there looking saying, look, another year is about to pass. Let’s focus.” Spring and Autumn are traditionally selling windows, which is exactly what the data also shows. People tend to be away over the summer, which is shown in the troughs in sale volumes each summer. So, if you want to get a good deal, look early in the year, when competition is lowest. The early work catches the deal, and property is no exception!</p>
+<p>One other interesting trend to observe from the analysis of sale volumes in Figure 1 is the peak in property sales in November of each year. This is attributed to people not wanting to search for houses for another year, with Geralyn Byrne of Sherry Fitzgerald <a href="https://www.irishtimes.com/life-and-style/homes-and-property/what-is-the-best-month-to-sell-your-home-to-get-the-maximum-price-1.4138305">noting that</a> “Traditionally November has always been a really terrific month for sales because you’ve got people who have been out there looking saying, look, another year is about to pass. Let’s focus.” People also tend to be away over the summer, which is shown in the troughs in sale volumes during that time each year. So, if you want to get a good deal, look early in the year, when competition is lowest. The early work catches the deal, and property is no exception!</p>
 <h3 id="violin-plot-to-observe-trends">Violin Plot to Observe Trends</h3>
-<p>Though not commonly used, violin plots make for a great way to share data. They're easy to explain, they're intuitive and attractive, and they accurately explain how the data is distributed across groups.</p>
-<p>In this case, it's a great was to observe how inflation-adjusted property prices have changed across Dublin between 2010 and 2019, as shown in Figure 4. The median annual-values are represented using the white dots, with a long tail of prices over €500,000 clearly observed. Indeed, this plot directly leads onto the next question that we wish to address: How have the volume of sales changed by price-cohort year-over-year.</p>
+<p>Though not commonly used, violin plots make for a great way to share data. They're easy to explain, they're intuitive and attractive, and they accurately depict how data is distributed across groups.</p>
+<p>In this case, it's a great way to observe how inflation-adjusted property prices have changed across Dublin between 2010 and 2019. As shown in Figure 4, the median annual-values are represented using the white dots, with a long tail of prices over €500,000 clearly observed. Indeed, this plot directly leads onto the next question that we wish to address: How have the volume of sales changed by price-cohort year-over-year.</p>
 <figure>
     <img src="https://niallmartin.io/images/property_price_analysis/violin_charts.jpg"
          alt="raw_stock_price"/> <figcaption>
@@ -193,8 +194,7 @@
 </figure>
 
 <h3 id="cohort-analysis-of-sale-volumes-by-price-bucket">Cohort Analysis of Sale Volumes by Price-Bucket</h3>
-<p>To determine what proportion of houses are being sold by price-cohort, we need to complete a few initial steps to prepare the data.
-More specifically, all property prices were first adjusted for inflation to insure the relative spending power of the Irish euro is taken into account over time. Next, we count the number of houses being sold by inflation-adjusted decile (ie. any houses between €100,000 - 199,000 are counted in the €100k bucket), allowing us to trace the changes in sale volumes by price over time.</p>
+<p>To determine what proportion of houses are being sold by price-cohort, we need to complete a few initial steps to prepare the data. More specifically, all property prices were first adjusted for inflation to insure the relative spending power of the Irish euro is taken into account over time. Next, the number of houses being sold by inflation-adjusted decile was counted (i.e. any houses between €100,000 - 199,000 are counted in the €100k bucket), all of which allowing us to trace the changes in sale volumes by price over time.</p>
 <figure>
     <img src="https://niallmartin.io/images/property_price_analysis/cohort_analysis.jpg"
          alt="raw_stock_price"/> <figcaption>
@@ -202,10 +202,10 @@ More specifically, all property prices were first adjusted for inflation to insu
         </figcaption>
 </figure>
 
-<p>The results from this analysis are outlined in the cohort-analysis in Figure 5, where a few noticeable trends can be observed.</p>
+<p>The final results are outlined with the cohort-analysis in Figure 5, where a few noticeable trends can be observed.</p>
 <ul>
-<li>Firstly, there is a clear increase in the value of houses sold, where 52% of properties had a sales price between €300-499,000 in 2019 (up from 24% in 2012).</li>
-<li>This increase in the sale of houses between the €300-499,000 bucket is also in direct contrast to a drop in volumes below an inflation-adjusted sales prices of €300,000. For example, 62% of properties sold in 2012 were below €300,000, which compares to 50% in 2019. Likewise, the number of properties being sold for less than €100,000 dropped from a peak of 3% in 2012 to less than 1% last year.</li>
+<li>Firstly, there is a clear increase in the value of houses sold, where 52% of properties had a sale price between €300-499,000 in 2019 (up from 24% in 2012).</li>
+<li>This increase in the sale of houses between the €300-499,000 bucket directly correlates with the drop in volume of properties below the inflation-adjusted sales prices of €300,000. For example, 62% of properties sold in 2012 were below €300,000, which compares to 50% in 2019. Likewise, the number of properties being sold for less than €100,000 dropped from a peak of 3% in 2012 to less than 1% last year.</li>
 <li>Finally, 72% of all properties being sold in Dublin in 2019 were less than an inflation-adjusted price of €500,000. The market for properties above €1.2 million has also been steadily increasing from 1% in 2011 to 3% last year.</li>
 </ul>
 <p>All in all, the graph clearly indicates that the boom is back, and people are beginning to spend money on Irish property once again.</p>
@@ -218,8 +218,8 @@ More specifically, all property prices were first adjusted for inflation to insu
         </figcaption>
 </figure>
 
-<p>Having used the Google Maps API to collect the geocoded data, I plotted the volume of sales in 2019 over time. This clearly illustrates the areas with the highest turnover of property sales. More interestingly, the plot of median sale prices in Figure 7 highlights the areas of Dublin highest value, demonstrating a clear socio-economic divide in the Dublin property market.</p>
-<p>Though both of these plots are static, please run the <a href="https://colab.research.google.com/drive/1jj_gbZO37bwWvhcuoR7zT62TRxYFqKqf#scrollTo=EruHwIX0Cg7c&amp;line=6&amp;uniqifier=1">following colab code</a> for the interactive versions.
+<p>Having used the Google Maps API to collect the geocoded data, I plotted the volume of sales in 2019 over time. This clearly illustrates the areas with the highest turnover of property sales. More interestingly, the plot of median sale prices in Figure 7 highlights the areas of Dublin with highest value, and demonstrates a clear socio-economic divide in the Dublin market. Wealth distribution clearly occurs in pockets, with the wealthiest are living in the south.</p>
+<p>Though both of these plots are static, the reader can also run the <a href="https://colab.research.google.com/drive/1jj_gbZO37bwWvhcuoR7zT62TRxYFqKqf#scrollTo=EruHwIX0Cg7c&amp;line=6&amp;uniqifier=1">following code</a> to obtain interactive versions.
 <figure>
     <img src="https://niallmartin.io/images/property_price_analysis/2019_sale_prices.jpg"
          alt="raw_stock_price"/> <figcaption>
