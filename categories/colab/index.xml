@@ -12,12 +12,15 @@
     
     
     <item>
-      <title>[Colab Notebook] Analysing and Predicting Stock Market Trends</title>
-      <link>https://niallmartin.io/posts/colab-notebook-analysing-and-predicting-stock-market-trends/</link>
+      <title>Analysing and Predicting Stock Market Trends</title>
+      <link>https://niallmartin.io/posts/analysing-and-predicting-stock-market-trends/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://niallmartin.io/posts/colab-notebook-analysing-and-predicting-stock-market-trends/</guid>
-      <description></description>
+      <guid>https://niallmartin.io/posts/analysing-and-predicting-stock-market-trends/</guid>
+      <description>Aim Put simply, this notebook aims to analyse stock-market data and demonstrate how to implement a LSTM RNN model using the Keras and Tensorflow. A high level summary of the results is outline in this post.
+A link to the main colab notebook is available here.
+Notes on the data Data was downloaded from Yahoo finance, which includes the following features:
+ Opening share price at the start of each trading day.</description>
     </item>
     
   </channel>

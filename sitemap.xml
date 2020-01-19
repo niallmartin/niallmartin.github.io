@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://niallmartin.io/posts/colab-notebook-analysing-and-predicting-stock-market-trends/</loc>
+    <loc>https://niallmartin.io/posts/analysing-and-predicting-stock-market-trends/</loc>
     <lastmod>2019-12-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -53,13 +53,13 @@
   </url>
   
   <url>
-    <loc>https://niallmartin.io/posts/recommended-reading-for-data-scientists/</loc>
-    <lastmod>2019-05-24T10:58:32+00:00</lastmod>
+    <loc>https://niallmartin.io/posts/ongoing-list-of-my-favourite-data-science-blogs/</loc>
+    <lastmod>2019-10-15T15:15:12+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://niallmartin.io/categories/resources/</loc>
-    <lastmod>2019-05-24T10:58:32+00:00</lastmod>
+    <lastmod>2019-10-15T15:15:12+00:00</lastmod>
   </url>
   
   <url>
@@ -75,6 +75,11 @@
   <url>
     <loc>https://niallmartin.io/posts/how-to-start-learning-deep-learning/</loc>
     <lastmod>2018-05-23T10:58:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.io/posts/introductory-resources-for-data-science/</loc>
+    <lastmod>2017-05-24T10:58:32+00:00</lastmod>
   </url>
   
   <url>
