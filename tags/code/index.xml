@@ -6,10 +6,29 @@
     <description>Recent content in Code on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://niallmartin.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Data Analysis] Dublin Property Trends</title>
+      <link>https://niallmartin.io/posts/data-analysis-dublin-property-trends/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://niallmartin.io/posts/data-analysis-dublin-property-trends/</guid>
+      <description>Analyse and Map Property Price Trends Looking for a house can be stressful. Where to go, what to spend, where the competition is. There&#39;s a lot of choice, but little analysis of the market as a whole.
+As such, I spend the day reviewing data from the Property Price Register - a live dataset of all residential properties purchased in Ireland since the 1st January 2010. With information relating to the Date of Sale, the Property Price (i.</description>
+    </item>
+    
+    <item>
+      <title>[Colab Notebook] Keras &amp; LSTM models to Predict Stock Prices</title>
+      <link>https://niallmartin.io/posts/colab-notebook-keras-lstm-models-to-predict-stock-prices/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://niallmartin.io/posts/colab-notebook-keras-lstm-models-to-predict-stock-prices/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Analysing and Predicting Stock Market Trends</title>
@@ -17,10 +36,8 @@
       <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://niallmartin.io/posts/analysing-and-predicting-stock-market-trends/</guid>
-      <description>Aim Put simply, this notebook aims to analyse stock-market data and demonstrate how to implement a LSTM RNN model using the Keras and Tensorflow. A high level summary of the results is outline in this post.
-A link to the main colab notebook is available here.
-Notes on the data Data was downloaded from Yahoo finance, which includes the following features:
- Opening share price at the start of each trading day.</description>
+      <description>Aim This notebook aims to provide a brief outline the results from a stock-market analysis, demonstrating how LSTM RNN models can be implemented with Keras and Tensorflow. It&#39;s important to note that all results discussed in this post are intended to be high-level, though the reader is encouraged to review this colab notebook for a more detailed analysis and a discussion of the underlying code.
+Notes on the data Data was downloaded from Yahoo finance, which includes the following features:</description>
     </item>
     
     <item>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="indicium artificium">
+    <meta name="description" content="Niall Martin&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal,data science,machine learning,ML,AI,python,keras,tensorflow">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Data Analysis] Dublin Property Trends"/>
+<meta name="twitter:description" content="Review of the Irish Property Market in 2010"/>
+
+    <meta property="og:title" content="[Data Analysis] Dublin Property Trends" />
+<meta property="og:description" content="Review of the Irish Property Market in 2010" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://niallmartin.io/posts/data-analysis-dublin-property-trends/" />
+<meta property="article:published_time" content="2020-01-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-09T00:00:00+00:00" />
+
+
+    
+      <base href="https://niallmartin.io/posts/data-analysis-dublin-property-trends/">
+    
+    <title>
+  [Data Analysis] Dublin Property Trends · Niall Martin
+</title>
+
+    
+      <link rel="canonical" href="https://niallmartin.io/posts/data-analysis-dublin-property-trends/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://niallmartin.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="https://niallmartin.io/custom.css" />
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://niallmartin.io/images/logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://niallmartin.io/images/logo.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.62.2" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://niallmartin.io/">
+      Niall Martin
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://niallmartin.io/about/">ABOUT</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://niallmartin.io/posts/">BLOG</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://vectordatascience.com">CONSULTING</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://niallmartin.io/quotes/">QUOTES</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">[Data Analysis] Dublin Property Trends</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-01-09T00:00:00Z'>
+                January 9, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              7 minutes read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://niallmartin.io/categories/colab/">Colab</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://niallmartin.io/tags/code/">Code</a>
+      <span class="separator">•</span>
+    <a href="https://niallmartin.io/tags/prediction/">Prediction</a>
+      <span class="separator">•</span>
+    <a href="https://niallmartin.io/tags/machine-learning/">Machine Learning</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        <h1 id="analyse-and-map-property-price-trends">Analyse and Map Property Price Trends</h1>
+<p>Looking for a house can be stressful. Where to go, what to spend, where the competition is. There's a lot of choice, but little analysis of the market as a whole.</p>
+<p>As such, I spend the day reviewing data from the <a href="https://www.propertypriceregister.ie/">Property Price Register</a> - a live dataset of all residential properties purchased in Ireland since the 1st January 2010. With information relating to the Date of Sale, the Property Price (i.e. sale price), and Address, I'm able to supplement the information with additional results from Google Maps (i.e. geospatial coordinates). With all this information, I'm then able to answer a few question about the property market in Dublin, including:</p>
+<ol>
+<li>What are mean and median sale prices for properties (i.e. houses and apartments) in Dublin?</li>
+<li>How  the prices changed over time?</li>
+<li>What is the distribution of property prices in Dublin? For example, are most properties over €500,000?</li>
+<li>Where are the properties being sold?</li>
+<li>And finally, what is the most expensive location in Dublin?</li>
+</ol>
+<p>This post aims to answer those questions, demonstrating how data can be used to guide buyers and make better informed decision. Only the results of my analysis are discussed in this article, though the reader is encouraged to review <a href="https://colab.research.google.com/drive/1jj_gbZO37bwWvhcuoR7zT62TRxYFqKqf">this colab notbook</a> to see how the analysis was performed. But, if you'll indulge me, I will provide a very brief overview of my methodology in the following section.</p>
+<h2 id="overview-of-methodology">Overview of Methodology</h2>
+<p>Having downloaded the data from the property price register (PPR), the next steps are (1): to adjust all prices for inflation and (2) to convert addresses into geographic coordinates. This latte process is referred to as Geocoding, and can be completed using the <a href="https://developers.google.com/maps/documentation/geocoding/start">Google Maps API</a>. Taking the messy PPR addresses, we're about to standardised the address and return the latitude and longitude coordinates for plotting. The overall process required the use of the following tools to complete the task:</p>
+<ul>
+<li>Colab and Python as the coding environment and language</li>
+<li>Pandas, Numpy, Matplotlib and Seaborn to analyse and plot trends</li>
+<li>Google Maps API to query each address; and</li>
+<li>Open Street Maps and Folium to plot results.</li>
+</ul>
+<p>The reader is referred to <a href="https://colab.research.google.com/drive/1jj_gbZO37bwWvhcuoR7zT62TRxYFqKqf">this colab notebook</a> to review all code.</p>
+<h2 id="results">Results</h2>
+<h3 id="analysis-of-raw-volumes-and-prices">Analysis of Raw Volumes and Prices</h3>
+<p>The volume of sales has increased dramatically in Ireland since 2010. Indeed, Figure 1 distinctly shows the impact that the <a href="https://en.wikipedia.org/wiki/Post-2008_Irish_economic_downturn">Post-2008 recession</a> had on the Irish market, where the volume of Dublin properties being sold dipped to below 400 per month in 2011. Since that time, however, there has been a clear resurgence in property sales, with an average of 1,500 properties being sold in the Irish capital each month since the start of 2018.</p>
+<figure>
+    <img src="https://niallmartin.io/images/property_price_analysis/volume_of_sales.jpg"
+         alt="raw_stock_price"/> <figcaption>
+            <p><strong>Figure 1: Volume of Dublin Property Sales over Time</strong></p>
+        </figcaption>
+</figure>
+
+<p>These trends are also reflected in the analysis of inflation-adjusted prices in Figure 2, where the mean monthly price is shown to have increased from a minimum of €260,000 in 2012 to €660,000 in 2018. Although this does put into perspective how dramatically the Irish property market has changed, such an analysis of mean prices needs to be taken <a href="https://www.cso.ie/en/releasesandpublications/in/rrppi/meanvsmedianinformationnote/">with a grain of salt</a>. Outliers tend to skew the data to be more extreme than what the average house sells form, which is better reflected using the review of median property price in the same chart. Though the absolute values have changed, the overall trend remains the same, with the average property selling from €176,000 in December 2011 to €352,000 in August 2018.</p>
+<figure>
+    <img src="https://niallmartin.io/images/property_price_analysis/mean_median_prices.jpg"
+         alt="raw_stock_price"/> <figcaption>
+            <p><strong>Figure 2: Mean (Left) and Median (Right) Prices over Time</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="annual-changes">Annual Changes</h3>
+<p>The plots for volume and price over time all show that the increase in price is tapering off. This trend is more accurately demonstrated with an analysis of year-over-year changes in median house prices in Figure 3, where annual increases have dropped from 15% in 2014 to a more modest changes of 1.4% last year.</p>
+<figure>
+    <img src="https://niallmartin.io/images/property_price_analysis/maximum_annual_price_change.jpg"
+         alt="raw_stock_price"/> <figcaption>
+            <p><strong>Figure 3: Year-over-Year Change in Median Dublin Property Prices.</strong></p>
+        </figcaption>
+</figure>
+
+<p>One other interesting trend to observe from the analysis of sale volumes in Figure 1 is the peak in property sales in November of each year. This is attributed to people not wanting to search for houses for another year, with Geralyn Byrne of Sherry Fitzgerald <a href="https://www.irishtimes.com/life-and-style/homes-and-property/what-is-the-best-month-to-sell-your-home-to-get-the-maximum-price-1.4138305">saying</a> “Traditionally November has always been a really terrific month for sales because you’ve got people who have been out there looking saying, look, another year is about to pass. Let’s focus.” Spring and Autumn are traditionally selling windows, which is exactly what the data also shows. People tend to be away over the summer, which is shown in the troughs in sale volumes each summer. So, if you want to get a good deal, look early in the year, when competition is lowest. The early work catches the deal, and property is no exception!</p>
+<h3 id="violin-plot-to-observe-trends">Violin Plot to Observe Trends</h3>
+<p>Though not commonly used, violin plots make for a great way to share data. They're easy to explain, they're intuitive and attractive, and they accurately explain how the data is distributed across groups.</p>
+<p>In this case, it's a great was to observe how inflation-adjusted property prices have changed across Dublin between 2010 and 2019, as shown in Figure 4. The median annual-values are represented using the white dots, with a long tail of prices over €500,000 clearly observed. Indeed, this plot directly leads onto the next question that we wish to address: How have the volume of sales changed by price-cohort year-over-year.</p>
+<figure>
+    <img src="https://niallmartin.io/images/property_price_analysis/violin_charts.jpg"
+         alt="raw_stock_price"/> <figcaption>
+            <p><strong>Figure 4: Violin Plots for Dublin Property Prices.</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="cohort-analysis-of-sale-volumes-by-price-bucket">Cohort Analysis of Sale Volumes by Price-Bucket</h3>
+<p>To determine what proportion of houses are being sold by price-cohort, we need to complete a few initial steps to prepare the data.
+More specifically, all property prices were first adjusted for inflation to insure the relative spending power of the Irish euro is taken into account over time. Next, we count the number of houses being sold by inflation-adjusted decile (ie. any houses between €100,000 - 199,000 are counted in the €100k bucket), allowing us to trace the changes in sale volumes by price over time.</p>
+<figure>
+    <img src="https://niallmartin.io/images/property_price_analysis/cohort_analysis.jpg"
+         alt="raw_stock_price"/> <figcaption>
+            <p><strong>Figure 5: Cohort Analysis of Dublin Property Prices, by Decile.</strong></p>
+        </figcaption>
+</figure>
+
+<p>The results from this analysis are outlined in the cohort-analysis in Figure 5, where a few noticeable trends can be observed.</p>
+<ul>
+<li>Firstly, there is a clear increase in the value of houses sold, where 52% of properties had a sales price between €300-499,000 in 2019 (up from 24% in 2012).</li>
+<li>This increase in the sale of houses between the €300-499,000 bucket is also in direct contrast to a drop in volumes below an inflation-adjusted sales prices of €300,000. For example, 62% of properties sold in 2012 were below €300,000, which compares to 50% in 2019. Likewise, the number of properties being sold for less than €100,000 dropped from a peak of 3% in 2012 to less than 1% last year.</li>
+<li>Finally, 72% of all properties being sold in Dublin in 2019 were less than an inflation-adjusted price of €500,000. The market for properties above €1.2 million has also been steadily increasing from 1% in 2011 to 3% last year.</li>
+</ul>
+<p>All in all, the graph clearly indicates that the boom is back, and people are beginning to spend money on Irish property once again.</p>
+<h3 id="plotting-data-by-location">Plotting Data by Location</h3>
+<p>Finally, it's time to look at the most popular locations!</p>
+<p>Having used the Google Maps API to collect the geocoded data, I plotted the volume of sales in 2019 over time. This clearly illustrates the areas with the highest turnover of property sales. More interestingly, the plot of median sale prices highlights the areas of Dublin highest value, demonstrating a clear socio-economic divide in the Dublin property market.</p>
+<h2 id="summary">Summary</h2>
+<p>And that's it! All code is available <a href="(https://colab.research.google.com/drive/1jj_gbZO37bwWvhcuoR7zT62TRxYFqKqf)">here</a>, and hopefully it can be useful to others. It certain domonstrates how things have changed in Ireland over the past decade, and the how property prices vary across the Irish capital.</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "niallmartin" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );">
+  </script>
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>data science & machine learning</p>
+    
+    
+      
+        © 2020
+      
+       indicium artificium 
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-48181177-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+
+</html>

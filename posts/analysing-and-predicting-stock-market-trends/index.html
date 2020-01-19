@@ -115,7 +115,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2 minutes read
+              4 minutes read
             </span>
           </div>
           <div class="categories">
@@ -135,9 +135,7 @@
 
       <div>
         <h1 id="aim">Aim</h1>
-<p>Put simply, this notebook aims to analyse stock-market data and demonstrate how to implement a LSTM RNN model using the Keras and Tensorflow. A high level summary of the results is outline in this post.</p>
-<p><strong>A link to the main colab notebook is available
-<a href="https://colab.research.google.com/drive/1vUsU3oV80C9HybfmDBKpyKr1z8UORy7z">here</a></strong>.</p>
+<p>This notebook aims to provide a brief outline the results from a stock-market analysis, demonstrating how LSTM RNN models can be implemented with Keras and Tensorflow. It's important to note that all results discussed in this post are intended to be high-level, though the reader is encouraged to review <a href="https://colab.research.google.com/drive/1vUsU3oV80C9HybfmDBKpyKr1z8UORy7z">this colab notebook</a> for a more detailed analysis and a discussion of the underlying code.</p>
 <h1 id="notes-on-the-data">Notes on the data</h1>
 <p>Data was downloaded from Yahoo finance, which includes the following features:</p>
 <ul>
@@ -150,18 +148,45 @@
 </ul>
 <p>I specifically reviewed the following tech stock, to compare the performance of that industry to the S&amp;P500: Apple, Google, Facebook, Square, Twitter, Amazon, Tesla. Note that the S&amp;P 500 index tracks the performance of the 500 large companies listed on stock exchanges in the United States. It is one of the most commonly followed equity indices, and many consider it to be one of the best representations of the U.S</p>
 <h1 id="summary-of-results">Summary of Results</h1>
-<p>Our first step is to plot the raw stock prices, which showed the S&amp;P 500 outperformed all of the other stocks in terms of absolute values. But this is to be expected, since the average spare price an S&amp;P500 position is higher than that of the other tech stocks I analysed.</p>
-<figure class="centered">
-    <img src="https://niallmartin.io/images/insight_project/introduction.jpg"
-         alt="Zadisha"/> 
+<h3 id="square-was-king">Square was King!</h3>
+<p>Our first step is to plot the raw stock prices. This showed that the S&amp;P 500 outperformed all of the other stocks in terms of absolute values, but this is something that was also to be expected, since the average spare price an S&amp;P500 position is higher than that of the other tech stocks analysed.</p>
+<figure>
+    <img src="https://niallmartin.io/images/stock_data/stock_price_over_time.jpg"
+         alt="raw_stock_price"/> <figcaption>
+            <p><strong>Figure 1: Stock Prices Over Time</strong></p>
+        </figcaption>
 </figure>
 
-<p>However, if we standardise the data (i.e. divide all subsequent entries by the first entry in the time series) in the following plot, we're able to track the relative change. This showed that Square vastly outperformed all of the other stocks, have increased by a factor of 5 since 2017 (which compares to a increase of ~2.5 for Amazon's share price).</p>
-<figure class="centered">
-    <img src="https://niallmartin.io/images/share_price_data/stock_price_over_time.png"
-         alt="raw_stock_price" height="250"/> 
+<p>A more meaningful measure of change comes from the analysis of the standardised stock data in Figure 2 (i.e. divide all subsequent entries by the first entry in the time series). From the graph, we're able to track relative change in the stocks over time, or stated more simply, we see how each stock increased in value since January 2017. The results clearly show that Square vastly outperformed all of the other stocks, have increased by a factor of 5 since 2017 (which compares to a increase of ~2.5 for Amazon's share price).</p>
+<figure>
+    <img src="https://niallmartin.io/images/stock_data/standardised_stock_prices.jpg"
+         alt="standardised_stock_price"/> <figcaption>
+            <p><strong>Figure 2: Standardised Stock Prices Over Time</strong></p>
+        </figcaption>
 </figure>
 
+<h3 id="tesla-was-turbulent">Tesla was Turbulent</h3>
+<p>The analysis of the raw stock prices in Figure 1 showed that there is a strong correlation between the performance of all stocks (i.e. if one goes up, the other does too). This begs the question, what stock was least correlated with the US market as a whole. For this, I use the S&amp;P 500 index as a standard for overall market performance. I subsequently plot the share prices for each stock against the S&amp;P on each trading day, fitting a correlation like to determine which stocks were more correlated.</p>
+<p>Put simply, the graph of stocks that closely track market performance will follow a 45$^{\circ}$ line and have an $R^2$ value of 1 or -1. Anything that has an $R^2$ value close to 0 traded very differently to how the overall market performed.</p>
+<figure>
+    <img src="https://niallmartin.io/images/stock_data/correlations.jpg"
+         alt="raw_stock_price"/> <figcaption>
+            <p><strong>Figure 3: Summary of Correlations Between Daily Stock Prices and S&amp;P500</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="predict-stock-prices-with-keras--tensorflow">Predict Stock Prices with Keras &amp; Tensorflow</h3>
+<p>Firstly off, it's important to note that the prediction of stock market data is difficult. Though some readers are bound to want to take the techniques introduced here for security predictions, past performance is not always a good predictor of future returns in the stock market. Machine learning is more applicable to datasets where the past is a good predictor of what is yet to come, but that's not the point of this section. This section simply aims to demonstrate how the reader might go about make predictions with LSTM models in Keras.</p>
+<p>The <a href="https://www.tensorflow.org/guide/keras/overview">Keras API</a> is a deep-learning framework for Python that's used to predict stock market prices. Using the sequential API, I was able to create a multi-layer deep-learning framework to predict the daily closing price using (1) today's opening price and (2) data from the previous daily trading window. Though the sequential Keras framework does not allow you to create models that share layers or have multiple inputs or outputs, the framework does allow for the quick and flexible way to make predictions in little time.</p>
+<p>The results for the 4-layered model are presented in Figure 4, demonstrating a clear correlation between predictions and actual trends (i.e. 0.01053 RMSE). Further improvements could be made with the inclusion of additional signals, though the analysis does illustrate the power of Keras and DNN models.</p>
+<figure>
+    <img src="https://niallmartin.io/images/stock_data/stock_market_predictions.jpg"
+         alt="Figure 4: Summary of results from from Keras LSTM Model"/> <figcaption>
+            <p><strong>Figure 4: Summary of results from from Keras LSTM Model</strong></p>
+        </figcaption>
+</figure>
+
+<p>Please refer to <a href="https://colab.research.google.com/drive/1vUsU3oV80C9HybfmDBKpyKr1z8UORy7z">this colab notebook</a> for all model code, and the <a href="https://www.tensorflow.org/hub/">Tensorflow hub</a> for a library of reusable modules.</p>
 
       </div>
 
@@ -194,7 +219,23 @@
       </footer>
     </article>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body,
