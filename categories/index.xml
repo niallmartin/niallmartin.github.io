@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2020 18:00:32 +0000</lastBuildDate>
     
 	<atom:link href="https://niallmartin.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Resources</title>
+      <link>https://niallmartin.io/categories/resources/</link>
+      <pubDate>Sat, 01 Feb 2020 18:00:32 +0000</pubDate>
+      
+      <guid>https://niallmartin.io/categories/resources/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Colab</title>
@@ -17,15 +26,6 @@
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://niallmartin.io/categories/colab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Resources</title>
-      <link>https://niallmartin.io/categories/resources/</link>
-      <pubDate>Tue, 15 Oct 2019 15:15:12 +0000</pubDate>
-      
-      <guid>https://niallmartin.io/categories/resources/</guid>
       <description></description>
     </item>
     

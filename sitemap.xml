@@ -3,12 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://niallmartin.io/posts/data-analysis-dublin-property-trends/</loc>
-    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <loc>https://niallmartin.io/categories/</loc>
+    <lastmod>2020-02-01T18:00:32+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://niallmartin.io/categories/</loc>
+    <loc>https://niallmartin.io/posts/machine-learning-notebook/</loc>
+    <lastmod>2020-02-01T18:00:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.io/</loc>
+    <lastmod>2020-02-01T18:00:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.io/posts/</loc>
+    <lastmod>2020-02-01T18:00:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.io/categories/resources/</loc>
+    <lastmod>2020-02-01T18:00:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://niallmartin.io/posts/data-analysis-dublin-property-trends/</loc>
     <lastmod>2020-01-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -24,16 +44,6 @@
   
   <url>
     <loc>https://niallmartin.io/tags/machine-learning/</loc>
-    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://niallmartin.io/</loc>
-    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://niallmartin.io/posts/</loc>
     <lastmod>2020-01-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -64,11 +74,6 @@
   
   <url>
     <loc>https://niallmartin.io/posts/ongoing-list-of-my-favourite-data-science-blogs/</loc>
-    <lastmod>2019-10-15T15:15:12+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://niallmartin.io/categories/resources/</loc>
     <lastmod>2019-10-15T15:15:12+00:00</lastmod>
   </url>
   
