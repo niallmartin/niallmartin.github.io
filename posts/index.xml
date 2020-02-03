@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Niall Martin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2020 18:00:32 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 19:30:32 +0000</lastBuildDate>
     
 	<atom:link href="https://niallmartin.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Formative Machine Learning Research Papers</title>
+      <link>https://niallmartin.io/posts/formative-machine-learning-research-papers/</link>
+      <pubDate>Mon, 03 Feb 2020 19:30:32 +0000</pubDate>
+      
+      <guid>https://niallmartin.io/posts/formative-machine-learning-research-papers/</guid>
+      <description>Formative Machine Learning Research Papers    Year Last Name First Name Title Link     1943 McCullough Warren A logical calculus of the ideas immanent in nervous activity Link   1943 McCullough Warren A logical calculus of the ideas immanent in nervous activity Link   1949 Hebb Donald The Organization of Behaviour Link   1950 Turing Alan Computing Machinery &amp;amp; Intelligence Link   1955 McCarthy John A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence Link   1958 Rosenblatt Frank The Perceptron: A probabalistic model for information storage and organization in the brain Link   1960 Fraser A.</description>
+    </item>
     
     <item>
       <title>Machine Learning Notebook</title>
